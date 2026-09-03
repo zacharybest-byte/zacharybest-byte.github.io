@@ -4,18 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zach Best — Media Entrepreneur &amp; Executive</title>
-<meta name="description" content="Zach Best is a media entrepreneur and executive — co-founder of FanSided, acquired by Time Inc. in 2015, and EVP of Communities at Sports Illustrated overseeing SI ONSI and FanSided.">
+<meta name="description" content="Zach Best is a media entrepreneur and executive — co-founder of FanSided, acquired by Time Inc. in 2015, and EVP of Communities at Sports Illustrated, overseeing the SI ONSI network and the FanSided brands.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Zach Best — Media Entrepreneur &amp; Executive">
-<meta property="og:description" content="Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated overseeing SI ONSI and FanSided.">
-<meta property="og:type" content="website">
+<meta property="og:description" content="Co-founder of FanSided. EVP of Communities at Sports Illustrated. Open to board service and selective advisory work.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://zacharybest.com/">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://zacharybest.com/headshot.png">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zach Best — Media Entrepreneur &amp; Executive">
-<meta name="twitter:description" content="Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated overseeing SI ONSI and FanSided.">
+<meta name="twitter:description" content="Co-founder of FanSided. EVP of Communities at Sports Illustrated.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="theme-color" content="#161826">
+<link rel="canonical" href="https://zacharybest.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Zach Best",
+  "alternateName": "Zachary Best",
+  "url": "https://zacharybest.com/",
+  "image": "https://zacharybest.com/headshot.png",
+  "email": "mailto:zach.best@si.com",
+  "jobTitle": "EVP, Communities",
+  "description": "Media entrepreneur and executive. Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated, overseeing the SI ONSI network and the FanSided brands.",
+  "worksFor": { "@type": "Organization", "name": "Sports Illustrated", "url": "https://www.si.com/" },
+  "alumniOf": { "@type": "Organization", "name": "FanSided", "url": "https://fansided.com/" },
+  "knowsAbout": [
+    "Digital media strategy",
+    "Audience and community development",
+    "Editorial operations",
+    "Media mergers and acquisitions",
+    "Real estate development",
+    "Board governance"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/zacharybest",
+    "https://x.com/zacharybest"
+  ],
+  "seeks": {
+    "@type": "Demand",
+    "name": "Board service and advisory roles"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #161826;
@@ -25,8 +61,13 @@
     --accent-300: #d2cefd;
     --n-300: #cfd3e5;
     --n-400: #b2b6ca;
+    --n-500: #9397ab;
     --n-600: #75798c;
-    --divider: rgba(233,233,237,0.16);
+    --n-800: #3f424d;
+    --divider: color-mix(in srgb, #e9e9ed 16%, transparent);
+    --hair: color-mix(in srgb, #e9e9ed 9%, transparent);
+    --r-md: 8px;
+    --r-lg: 14px;
   }
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; }
@@ -38,120 +79,458 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
-  main {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: clamp(28px, 6vw, 72px) clamp(24px, 8vw, 120px) 48px;
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: clamp(24px, 4vw, 40px) clamp(24px, 7vw, 96px) clamp(56px, 8vw, 96px);
   }
-  header { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
-  .brand { font-weight: 500; letter-spacing: -0.01em; }
   a { color: var(--text); text-decoration: none; }
   a:hover { color: var(--accent); }
-  header a { color: var(--accent-300); }
-  .body {
-    flex: 1;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
-    gap: clamp(32px, 6vw, 96px);
-    align-items: start;
-    max-width: 1040px;
-    margin-top: clamp(56px, 10vh, 120px);
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ::selection { background: rgba(145, 132, 217, 0.3); }
+
+  /* Freestanding rules fade at their ends — Nocturne's edge treatment. */
+  .rule {
+    height: 1px;
+    border: 0;
+    margin: 0;
+    background: linear-gradient(to right,
+      transparent, var(--divider) 48px,
+      var(--divider) calc(100% - 48px), transparent);
   }
-  .col { display: flex; flex-direction: column; gap: 32px; }
-  .lede { display: flex; flex-direction: column; gap: 14px; }
-  .mark { width: 32px; height: 2px; background: var(--accent); }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 12px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: var(--r-md);
+    font-size: 14px;
+    color: var(--text);
+    z-index: 10;
+  }
+  .skip:focus { left: 16px; }
+
+  header.top { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; }
+  .brand { font-weight: 500; letter-spacing: -0.01em; }
+  header.top a { color: var(--accent-300); font-size: 13px; }
+
+  .mark { width: 28px; height: 2px; background: var(--accent); }
+  .eyebrow {
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--n-500);
+    margin: 0;
+  }
+
+  /* ── Hero: type only, hugging the left with air on the right ── */
+  .hero {
+    margin-top: clamp(72px, 16vh, 168px);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    max-width: 780px;
+  }
   h1 {
-    font-size: clamp(34px, 4.5vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
+    font-size: clamp(38px, 6.2vw, 74px);
+    line-height: 1.0;
+    letter-spacing: -0.03em;
     margin: 0;
     font-weight: 500;
-    text-wrap: pretty;
-    max-width: 16ch;
+    text-wrap: balance;
+    max-width: 15ch;
   }
   .sub {
     margin: 0;
-    font-size: clamp(17px, 1.6vw, 21px);
-    line-height: 1.45;
+    font-size: clamp(17px, 1.8vw, 22px);
+    line-height: 1.4;
     color: var(--n-400);
-    max-width: 40ch;
+    max-width: 34ch;
     text-wrap: pretty;
   }
   .bio {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 16.5px;
+    line-height: 1.7;
     color: var(--n-300);
-    max-width: 56ch;
+    max-width: 62ch;
     text-wrap: pretty;
   }
-  nav { display: flex; gap: 10px; flex-wrap: wrap; padding-top: 8px; }
-  nav a {
+
+  nav.links { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 6px; }
+  .btn {
     display: inline-flex;
     align-items: center;
-    padding: 9px 16px;
+    padding: 8px 15px;
     border: 1px solid var(--divider);
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: var(--r-md);
+    font-size: 13.5px;
     font-weight: 500;
+    transition: background-color 120ms ease;
   }
-  nav a:hover { background: rgba(233,233,237,0.07); color: var(--text); }
-  nav a.primary { border-color: var(--accent); color: var(--accent); }
-  nav a.primary:hover { background: rgba(145,132,217,0.12); color: var(--accent); }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  ::selection { background: rgba(145,132,217,0.3); }
+  .btn:hover { background: rgba(233, 233, 237, 0.07); color: var(--text); }
+  .btn:active { background: rgba(233, 233, 237, 0.12); }
+  .btn-accent { border-color: var(--accent); color: var(--accent); }
+  .btn-accent:hover { background: rgba(145, 132, 217, 0.12); color: var(--accent); }
+  .btn-accent:active { background: rgba(145, 132, 217, 0.2); color: var(--accent); }
+
+  /* ── Perspective: portrait beside three vantage points ── */
+  .persp {
+    margin-top: clamp(80px, 15vh, 152px);
+    display: grid;
+    grid-template-columns: minmax(220px, 312px) minmax(0, 1fr);
+    gap: clamp(36px, 6vw, 88px);
+    align-items: start;
+  }
   figure {
     margin: 0;
-    border-radius: 14px;
+    border-radius: var(--r-lg);
     overflow: hidden;
-    box-shadow: 0 0 0 1px #3f424d;
+    box-shadow: 0 0 0 1px var(--n-800);
     aspect-ratio: 4 / 5;
     background: var(--surface);
   }
-  figure img {
-    width: 100%; height: 100%;
-    object-fit: cover; display: block;
-    filter: saturate(0.85);
+  figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .vantage { display: flex; flex-direction: column; gap: 0; }
+  .vantage > .eyebrow { margin-bottom: 22px; }
+  .vp {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: clamp(12px, 2vw, 24px);
+    padding: 24px 0;
+    background: linear-gradient(to right,
+      transparent, var(--hair) 48px,
+      var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
   }
-  footer { margin-top: 80px; font-size: 12px; color: var(--n-600); }
-  @media (max-width: 760px) {
-    .body { grid-template-columns: 1fr; gap: 40px; }
-    figure { max-width: 280px; }
-    footer { margin-top: 56px; }
+  .vp:last-child {
+    background:
+      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px,
+      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+  }
+  .vp-n { font-size: 12.5px; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 3px; }
+  .vp-b { display: flex; flex-direction: column; gap: 7px; }
+  .vp-b h3 { font-size: 17.5px; font-weight: 500; letter-spacing: -0.012em; margin: 0; }
+  .vp-b span { font-size: 15px; line-height: 1.62; color: var(--n-400); max-width: 50ch; text-wrap: pretty; }
+
+  /* ── Track record ── */
+  section.record { margin-top: clamp(80px, 15vh, 152px); }
+  section.record > .eyebrow { margin-bottom: 22px; }
+  .row {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: clamp(16px, 3vw, 44px);
+    padding: 22px 0;
+    align-items: baseline;
+    background: linear-gradient(to right,
+      transparent, var(--hair) 48px,
+      var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
+  }
+  .row:last-child {
+    background:
+      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px,
+      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+  }
+  .when { font-size: 13px; color: var(--n-500); font-variant-numeric: tabular-nums; }
+  .what { display: flex; flex-direction: column; gap: 5px; }
+  .what h3 { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
+  .what span { font-size: 14.5px; line-height: 1.58; color: var(--n-400); max-width: 54ch; text-wrap: pretty; }
+
+  /* ── Podcast ── */
+  section.pod { margin-top: clamp(80px, 15vh, 152px); }
+  section.pod > .eyebrow { margin-bottom: 22px; }
+  .pod-block {
+    display: grid;
+    grid-template-columns: 124px minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+    align-items: center;
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    box-shadow: 0 0 0 1px var(--n-800);
+    padding: clamp(18px, 2.4vw, 24px);
+  }
+  .pod-art {
+    margin: 0;
+    aspect-ratio: 1;
+    border-radius: var(--r-md);
+    overflow: hidden;
+    box-shadow: 0 0 0 1px var(--n-800);
+    background: var(--bg);
+  }
+  .pod-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pod-body { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .pod-body h3 {
+    margin: 0;
+    font-size: clamp(18px, 1.8vw, 21px);
+    font-weight: 500;
+    letter-spacing: -0.018em;
+    line-height: 1.2;
+  }
+  .pod-body p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--n-400); max-width: 52ch; text-wrap: pretty; }
+  .pod-latest {
+    font-size: 13.5px;
+    color: var(--n-500);
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .pod-latest em {
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .pod-latest b { font-weight: 500; color: var(--n-300); }
+  .pod-links { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 4px; }
+
+  /* ── Close ── */
+  section.close {
+    margin-top: clamp(80px, 15vh, 152px);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: clamp(36px, 6vw, 80px);
+    align-items: start;
+  }
+  .close-l { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  .close-lead {
+    margin: 0;
+    text-transform: none;
+    font-size: clamp(22px, 2.8vw, 32px);
+    line-height: 1.24;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    max-width: 24ch;
+    text-wrap: balance;
+  }
+  .close-body { margin: 0; font-size: 16px; line-height: 1.68; color: var(--n-400); max-width: 42ch; text-wrap: pretty; }
+  .close .btn { padding: 10px 18px; font-size: 14px; margin-top: 4px; }
+  .envs { display: flex; flex-direction: column; gap: 0; list-style: none; margin: 0; padding: 0; }
+  .envs li {
+    font-size: 14.5px;
+    color: var(--n-300);
+    padding: 13px 0;
+    background: linear-gradient(to right, var(--hair), var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
+  }
+  .envs li:first-child { background: none; }
+
+  footer {
+    margin-top: clamp(80px, 14vh, 140px);
+    padding-top: 22px;
+    font-size: 12.5px;
+    color: var(--n-500);
+    background: linear-gradient(to right,
+      transparent, var(--divider) 48px,
+      var(--divider) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
+  }
+
+  @media (max-width: 900px) {
+    .persp { grid-template-columns: 1fr; gap: 44px; }
+    .pod-block { grid-template-columns: 1fr; gap: 26px; align-items: start; }
+    .pod-art { max-width: 124px; }
+    figure { max-width: 264px; }
+    .close { grid-template-columns: 1fr; gap: 44px; }
+    .btn { padding: 12px 18px; font-size: 14.5px; }
+    .close .btn { padding: 13px 20px; font-size: 15px; }
+    nav.links { gap: 10px; }
+    header.top a { font-size: 14px; padding: 12px 0; }
+    footer { font-size: 13px; }
+  }
+  @media (max-width: 700px) {
+    .row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+    .when { font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .vp { grid-template-columns: 1fr; gap: 8px; }
+    .vp-n { padding-top: 0; }
   }
 </style>
 </head>
 <body>
-<main>
-  <header>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap" id="main">
+
+  <header class="top">
     <span class="brand">Zach Best</span>
     <a href="mailto:zach.best@si.com">zach.best@si.com</a>
   </header>
 
-  <div class="body">
-    <div class="col">
-      <div class="lede">
-        <div class="mark"></div>
-        <h1>Media entrepreneur &amp; executive.</h1>
-        <p class="sub">Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated and FanSided.</p>
-      </div>
+  <section class="hero">
+    <div class="mark"></div>
+    <h1>Media entrepreneur &amp; executive.</h1>
+    <p class="sub">Co-founder of FanSided. EVP of Communities at Sports Illustrated</p>
+    <p class="bio">Zach has spent his career building connections between people, communities, audiences, and ideas. His experience spans education, entrepreneurship, media, and development, but the common thread has always been relationships. Whether building a company from the ground up, growing communities around some of the biggest brands in media, or developing new opportunities closer to home, he believes the strongest businesses are built around people first.</p>
+    <nav class="links" aria-label="Links">
+      <a class="btn btn-accent" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://x.com/zacharybest" target="_blank" rel="noopener">X</a>
+      <a class="btn" href="mailto:zach.best@si.com">Email</a>
+    </nav>
+  </section>
 
-      <p class="bio">Zach co-founded FanSided in 2007 and grew it into a network of 300+ brands before its acquisition by Time Inc. in 2015. Today he is EVP of Communities for Sports Illustrated and FanSided, overseeing the SI ONSI network and the FanSided brands. He is open to selective consulting, board service, and strategic media advisory opportunities.</p>
-
-      <nav aria-label="Links">
-        <a class="primary" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/zacharybest" target="_blank" rel="noopener">X</a>
-        <a href="mailto:zach.best@si.com">Email</a>
-      </nav>
-    </div>
-
+  <section class="persp">
     <figure>
       <img src="headshot.png" alt="Zach Best" width="800" height="1000">
     </figure>
-  </div>
+
+    <div class="vantage">
+      <h2 class="eyebrow">Three vantage points</h2>
+
+      <div class="vp">
+        <span class="vp-n">01</span>
+        <div class="vp-b">
+          <h3>Founder</b>
+          <span>Started FanSided from a blank page and built the architecture it needed — a distributed contributor network, hundreds of localized brands, and the editorial standards to hold them together.</span>
+        </div>
+      </div>
+
+      <div class="vp">
+        <span class="vp-n">02</span>
+        <div class="vp-b">
+          <h3>Operator</b>
+          <span>Scaled that network to acquisition, then led it through integration into a national media company and the platform shifts that followed.</span>
+        </div>
+      </div>
+
+      <div class="vp">
+        <span class="vp-n">03</span>
+        <div class="vp-b">
+          <h3>Executive</b>
+          <span>Runs communities at Sports Illustrated today, aligning editorial, product and sales across a portfolio of brands.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="record">
+    <h2 class="eyebrow">Track record</h2>
+
+    <div class="row">
+      <span class="when">Present</span>
+      <div class="what">
+        <h3>EVP, Communities — Sports Illustrated</h3>
+        <span>Oversees the SI ONSI network and the FanSided brands.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="when">Present</span>
+      <div class="what">
+        <h3>Developer — Harper Ridge</h3>
+        <span>Investor and developer of a 159-lot neighborhood. Over 200 lots developed in the past five years.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="when">Prior</span>
+      <div class="what">
+        <h3>General Manager, Minute Media</h3>
+        <span>Ran the FanSided business ahead of the Sports Illustrated rebrand.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="when">2015</span>
+      <div class="what">
+        <h3>FanSided acquired by Time Inc.</h3>
+        <span>Founder to executive, through the integration into a national media organization.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="when">2007</span>
+      <div class="what">
+        <h3>Co-founded FanSided</h3>
+        <span>One sports site became a contributor network of hundreds of localized fan brands.</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <span class="when">Earlier</span>
+      <div class="what">
+        <h3>Seven years as an educator</h3>
+        <span>Where the habits of clear communication and developing people were formed.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pod">
+    <h2 class="eyebrow">Podcast</h2>
+
+    <div class="pod-block">
+      <figure class="pod-art">
+        <img src="podcast.jpg" alt="What&rsquo;s Your Y? podcast artwork" width="400" height="400">
+      </figure>
+
+      <div class="pod-body">
+        <h3>What&rsquo;s Your Y?</h3>
+        <p>Conversations built with Special Olympics athletes and Unified partners, made as part of FanSided Podcasts. Inclusive storytelling as professional practice, not charity.</p>
+        <div class="pod-latest" id="pod-latest" hidden>
+          <em>Latest</em>
+          <b id="pod-latest-title"></b>
+          <span id="pod-latest-date"></span>
+        </div>
+        <div class="pod-links">
+          <a class="btn btn-accent" id="pod-spotify" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
+          <a class="btn" id="pod-apple" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple Podcasts</a>
+          <a class="btn" id="pod-youtube" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="close-l">
+      <div class="mark"></div>
+      <h2 class="close-lead">Open to board service and selective advisory work.</h2>
+      <p class="close-body">The strongest boards pair rigorous governance with operating experience. Zach brings all three vantage points to the table.</p>
+      <a class="btn btn-accent" href="mailto:zach.best@si.com">Get in touch</a>
+    </div>
+
+    <ul class="envs">
+      <li>Media networks and publishing groups</li>
+      <li>Sports and entertainment platforms</li>
+      <li>Digital community and technology businesses</li>
+      <li>Mission-driven and inclusion-focused organizations</li>
+      <li>Real estate development and land use</li>
+      <li>Nonprofits and youth development</li>
+    </ul>
+  </section>
 
   <footer>© 2026 Zach Best</footer>
-</main>
+
+</div>
+
+<script>
+// Latest episode, pulled from the podcast RSS feed. Put the feed URL here.
+// If the feed's host doesn't allow cross-origin reads, or the URL is blank,
+// the line stays hidden and the rest of the section is unaffected.
+const PODCAST_FEED = "";
+
+if (PODCAST_FEED) {
+  fetch(PODCAST_FEED)
+    .then(r => r.ok ? r.text() : Promise.reject(r.status))
+    .then(xml => {
+      const doc = new DOMParser().parseFromString(xml, "application/xml");
+      const item = doc.querySelector("item");
+      if (!item) return;
+      const title = item.querySelector("title")?.textContent?.trim();
+      const pub = item.querySelector("pubDate")?.textContent;
+      if (!title) return;
+      document.getElementById("pod-latest-title").textContent = title;
+      if (pub) {
+        const d = new Date(pub);
+        if (!isNaN(d)) {
+          document.getElementById("pod-latest-date").textContent =
+            d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+        }
+      }
+      document.getElementById("pod-latest").hidden = false;
+    })
+    .catch(() => {});
+}
+</script>
 </body>
 </html>

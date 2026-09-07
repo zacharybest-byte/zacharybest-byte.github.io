@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zach Best — Media Entrepreneur &amp; Executive</title>
-<meta name="description" content="Zach Best is a media entrepreneur and executive — co-founder of FanSided, acquired by Time Inc. in 2015, and EVP of Communities at Sports Illustrated, overseeing the SI ONSI network and the FanSided brands.">
+<meta name="description" content="Zach Best is a media entrepreneur, executive and developer — co-founder of FanSided, acquired by Time Inc. in 2015, and EVP of Communities at Sports Illustrated. Open to board service, advisory, and select investments.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Zach Best — Media Entrepreneur &amp; Executive">
-<meta property="og:description" content="Co-founder of FanSided. EVP of Communities at Sports Illustrated. Open to board service and selective advisory work.">
+<meta property="og:description" content="Co-founder of FanSided. EVP of Communities at Sports Illustrated. Open to board service, advisory, and select investments.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://zacharybest.com/">
-<meta property="og:image" content="https://zacharybest.com/headshot.png">
+<meta property="og:image" content="https://zacharybest.com/headshot-graded.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zach Best — Media Entrepreneur &amp; Executive">
 <meta name="twitter:description" content="Co-founder of FanSided. EVP of Communities at Sports Illustrated.">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<meta name="theme-color" content="#161826">
+<meta name="theme-color" content="#1a1d26">
 <link rel="canonical" href="https://zacharybest.com/">
 <script type="application/ld+json">
 {
@@ -25,10 +25,10 @@
   "name": "Zach Best",
   "alternateName": "Zachary Best",
   "url": "https://zacharybest.com/",
-  "image": "https://zacharybest.com/headshot.png",
+  "image": "https://zacharybest.com/headshot-graded.png",
   "email": "mailto:zach.best@si.com",
   "jobTitle": "EVP, Communities",
-  "description": "Media entrepreneur and executive. Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated, overseeing the SI ONSI network and the FanSided brands.",
+  "description": "Media entrepreneur, executive and developer. Co-founder of FanSided, acquired by Time Inc. in 2015. EVP of Communities at Sports Illustrated, overseeing the SI ONSI network and the FanSided brands.",
   "worksFor": { "@type": "Organization", "name": "Sports Illustrated", "url": "https://www.si.com/" },
   "alumniOf": { "@type": "Organization", "name": "FanSided", "url": "https://fansided.com/" },
   "knowsAbout": [
@@ -43,494 +43,542 @@
     "https://www.linkedin.com/in/zacharybest",
     "https://x.com/zacharybest"
   ],
-  "seeks": {
-    "@type": "Demand",
-    "name": "Board service and advisory roles"
-  }
+  "seeks": { "@type": "Demand", "name": "Board service, advisory roles and select investments" }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #161826;
-    --surface: #232532;
-    --text: #e9e9ed;
-    --accent: #9184d9;
-    --accent-300: #d2cefd;
-    --n-300: #cfd3e5;
-    --n-400: #b2b6ca;
-    --n-500: #9397ab;
-    --n-600: #75798c;
-    --n-800: #3f424d;
-    --divider: color-mix(in srgb, #e9e9ed 16%, transparent);
-    --hair: color-mix(in srgb, #e9e9ed 9%, transparent);
-    --r-md: 8px;
-    --r-lg: 14px;
-  }
-  *, *::before, *::after { box-sizing: border-box; }
-  html, body { margin: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, system-ui, -apple-system, sans-serif;
-    font-size: 15px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: clamp(24px, 4vw, 40px) clamp(24px, 7vw, 96px) clamp(56px, 8vw, 96px);
-  }
-  a { color: var(--text); text-decoration: none; }
-  a:hover { color: var(--accent); }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  ::selection { background: rgba(145, 132, 217, 0.3); }
+/* Nocturne — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-  /* Freestanding rules fade at their ends — Nocturne's edge treatment. */
-  .rule {
-    height: 1px;
-    border: 0;
-    margin: 0;
-    background: linear-gradient(to right,
-      transparent, var(--divider) 48px,
-      var(--divider) calc(100% - 48px), transparent);
-  }
+:root {
+  --color-bg: #161826;
+  --color-surface: #232532;
+  --color-text: #e9e9ed;
+  --color-accent: #9184d9; /* review round 7 (Barron): the accent moves to
+     the product's blurple — OKLCH hue 289.2, the hue of the app's own Pro
+     accent (#9a8fe0, --om-accent-pro) — at the same lightness the steel
+     accent held (L 0.660, so the documented ratios survive) and chroma
+     in the product blurple's own range (its token sits at C 0.118; the
+     accent takes 0.125, from the old steel's 0.030):
+     the accent now reads as an accent rather than another neutral. */
+  --color-accent-2: #a7a1db; /* the machine-derived stand-in follows: same
+     hue, same L 0.734, chroma at the same 2:3 proportion it held */
+  --color-divider: color-mix(in srgb, #e9e9ed 16%, transparent);
 
-  .skip {
-    position: absolute;
-    left: -9999px;
-    top: 12px;
-    padding: 10px 16px;
-    background: var(--surface);
-    border: 1px solid var(--accent);
-    border-radius: var(--r-md);
-    font-size: 14px;
-    color: var(--text);
-    z-index: 10;
-  }
-  .skip:focus { left: 16px; }
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f3f5fe;
+  --color-neutral-200: #e4e7f5;
+  --color-neutral-300: #cfd3e5;
+  --color-neutral-400: #b2b6ca;
+  --color-neutral-500: #9397ab;
+  --color-neutral-600: #75798c;
+  --color-neutral-700: #595d6c;
+  --color-neutral-800: #3f424d;
+  --color-neutral-900: #292b31;
 
-  header.top { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; }
-  .brand { font-weight: 500; letter-spacing: -0.01em; }
-  header.top a { color: var(--accent-300); font-size: 13px; }
+  --color-accent-100: #f5f4ff;
+  --color-accent-200: #e7e5fe;
+  --color-accent-300: #d2cefd;
+  --color-accent-400: #b5abfc;
+  --color-accent-500: #968ae0;
+  --color-accent-600: #796cbf;
+  --color-accent-700: #5d5294;
+  --color-accent-800: #423a6a;
+  --color-accent-900: #2b2741;
 
-  .mark { width: 28px; height: 2px; background: var(--accent); }
-  .eyebrow {
-    font-size: 11.5px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--n-500);
-    margin: 0;
-  }
+  --color-accent-2-100: #f5f4ff;
+  --color-accent-2-200: #e7e5fe;
+  --color-accent-2-300: #d2cefd;
+  --color-accent-2-400: #b5afe8;
+  --color-accent-2-500: #9690c9;
+  --color-accent-2-600: #7972a9;
+  --color-accent-2-700: #5c5783;
+  --color-accent-2-800: #423e5d;
+  --color-accent-2-900: #2b293a;
 
-  /* ── Hero: type only, hugging the left with air on the right ── */
-  .hero {
-    margin-top: clamp(72px, 16vh, 168px);
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    max-width: 780px;
-  }
-  h1 {
-    font-size: clamp(38px, 6.2vw, 74px);
-    line-height: 1.0;
-    letter-spacing: -0.03em;
-    margin: 0;
-    font-weight: 500;
-    text-wrap: balance;
-    max-width: 15ch;
-  }
-  .sub {
-    margin: 0;
-    font-size: clamp(17px, 1.8vw, 22px);
-    line-height: 1.4;
-    color: var(--n-400);
-    max-width: 34ch;
-    text-wrap: pretty;
-  }
-  .bio {
-    margin: 0;
-    font-size: 16.5px;
-    line-height: 1.7;
-    color: var(--n-300);
-    max-width: 62ch;
-    text-wrap: pretty;
-  }
+  /* Deck section-divider ground — review round 3: saturation as presence.
+     Dividers take a saturated deep indigo (hue 277, the neutral ramp's own
+     family; C 0.094 — written when the accent held C 0.030, before the
+     round-7 blurple raised it past the ground's) with a lighter bloom and
+     a ghost tint of the same hue, while the slide grounds stay
+     desaturated. Deck-scale fills only — not interface colors. */
+  --color-section: #262a60;
+  --color-section-glow: #353b80;
+  --color-section-ghost: #4c5397;
 
-  nav.links { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 6px; }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 15px;
-    border: 1px solid var(--divider);
-    border-radius: var(--r-md);
-    font-size: 13.5px;
-    font-weight: 500;
-    transition: background-color 120ms ease;
-  }
-  .btn:hover { background: rgba(233, 233, 237, 0.07); color: var(--text); }
-  .btn:active { background: rgba(233, 233, 237, 0.12); }
-  .btn-accent { border-color: var(--accent); color: var(--accent); }
-  .btn-accent:hover { background: rgba(145, 132, 217, 0.12); color: var(--accent); }
-  .btn-accent:active { background: rgba(145, 132, 217, 0.2); color: var(--accent); }
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-heading-weight: 500;
+  --font-body: "Inter", system-ui, sans-serif;
 
-  /* ── Perspective: portrait beside three vantage points ── */
-  .persp {
-    margin-top: clamp(80px, 15vh, 152px);
-    display: grid;
-    grid-template-columns: minmax(220px, 312px) minmax(0, 1fr);
-    gap: clamp(36px, 6vw, 88px);
-    align-items: start;
-  }
-  figure {
-    margin: 0;
-    border-radius: var(--r-lg);
-    overflow: hidden;
-    box-shadow: 0 0 0 1px var(--n-800);
-    aspect-ratio: 4 / 5;
-    background: var(--surface);
-  }
-  figure img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  --space-1: 2.8px;
+  --space-2: 5.6px;
+  --space-3: 8.4px;
+  --space-4: 11.2px;
+  --space-6: 16.8px;
+  --space-8: 22.4px;
 
-  .vantage { display: flex; flex-direction: column; gap: 0; }
-  .vantage > .eyebrow { margin-bottom: 22px; }
-  .vp {
-    display: grid;
-    grid-template-columns: 34px minmax(0, 1fr);
-    gap: clamp(12px, 2vw, 24px);
-    padding: 24px 0;
-    background: linear-gradient(to right,
-      transparent, var(--hair) 48px,
-      var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
-  }
-  .vp:last-child {
-    background:
-      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px,
-      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
-  }
-  .vp-n { font-size: 12.5px; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 3px; }
-  .vp-b { display: flex; flex-direction: column; gap: 7px; }
-  .vp-b h3 { font-size: 17.5px; font-weight: 500; letter-spacing: -0.012em; margin: 0; }
-  .vp-b span { font-size: 15px; line-height: 1.62; color: var(--n-400); max-width: 50ch; text-wrap: pretty; }
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
 
-  /* ── Track record ── */
-  section.record { margin-top: clamp(80px, 15vh, 152px); }
-  section.record > .eyebrow { margin-bottom: 22px; }
-  .row {
-    display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: clamp(16px, 3vw, 44px);
-    padding: 22px 0;
-    align-items: baseline;
-    background: linear-gradient(to right,
-      transparent, var(--hair) 48px,
-      var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
-  }
-  .row:last-child {
-    background:
-      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px,
-      linear-gradient(to right, transparent, var(--hair) 48px, var(--hair) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
-  }
-  .when { font-size: 13px; color: var(--n-500); font-variant-numeric: tabular-nums; }
-  .what { display: flex; flex-direction: column; gap: 5px; }
-  .what h3 { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
-  .what span { font-size: 14.5px; line-height: 1.58; color: var(--n-400); max-width: 54ch; text-wrap: pretty; }
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 0 0 1px #3f424d;
+  --shadow-md: 0 0 0 1px #595d6c, 0 6px 18px rgba(0,0,0,0.55);
+  --shadow-lg: 0 0 0 1px #9397ab, 0 16px 40px rgba(0,0,0,0.65);
+}
 
-  /* ── Podcast ── */
-  section.pod { margin-top: clamp(80px, 15vh, 152px); }
-  section.pod > .eyebrow { margin-bottom: 22px; }
-  .pod-block {
-    display: grid;
-    grid-template-columns: 124px minmax(0, 1fr);
-    gap: clamp(20px, 3vw, 32px);
-    align-items: center;
-    background: var(--surface);
-    border-radius: var(--r-lg);
-    box-shadow: 0 0 0 1px var(--n-800);
-    padding: clamp(18px, 2.4vw, 24px);
-  }
-  .pod-art {
-    margin: 0;
-    aspect-ratio: 1;
-    border-radius: var(--r-md);
-    overflow: hidden;
-    box-shadow: 0 0 0 1px var(--n-800);
-    background: var(--bg);
-  }
-  .pod-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .pod-body { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
-  .pod-body h3 {
-    margin: 0;
-    font-size: clamp(18px, 1.8vw, 21px);
-    font-weight: 500;
-    letter-spacing: -0.018em;
-    line-height: 1.2;
-  }
-  .pod-body p { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--n-400); max-width: 52ch; text-wrap: pretty; }
-  .pod-latest {
-    font-size: 13.5px;
-    color: var(--n-500);
-    display: flex;
-    gap: 9px;
-    align-items: baseline;
-    flex-wrap: wrap;
-  }
-  .pod-latest em {
-    font-style: normal;
-    font-size: 11.5px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
-  .pod-latest b { font-weight: 500; color: var(--n-300); }
-  .pod-links { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 4px; }
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
 
-  /* ── Close ── */
-  section.close {
-    margin-top: clamp(80px, 15vh, 152px);
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
-    gap: clamp(36px, 6vw, 80px);
-    align-items: start;
-  }
-  .close-l { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
-  .close-lead {
-    margin: 0;
-    text-transform: none;
-    font-size: clamp(22px, 2.8vw, 32px);
-    line-height: 1.24;
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    max-width: 24ch;
-    text-wrap: balance;
-  }
-  .close-body { margin: 0; font-size: 16px; line-height: 1.68; color: var(--n-400); max-width: 42ch; text-wrap: pretty; }
-  .close .btn { padding: 10px 18px; font-size: 14px; margin-top: 4px; }
-  .envs { display: flex; flex-direction: column; gap: 0; list-style: none; margin: 0; padding: 0; }
-  .envs li {
-    font-size: 14.5px;
-    color: var(--n-300);
-    padding: 13px 0;
-    background: linear-gradient(to right, var(--hair), var(--hair) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
-  }
-  .envs li:first-child { background: none; }
+.lighten{mix-blend-mode:lighten;background-color:transparent}
 
-  footer {
-    margin-top: clamp(80px, 14vh, 140px);
-    padding-top: 22px;
-    font-size: 12.5px;
-    color: var(--n-500);
-    background: linear-gradient(to right,
-      transparent, var(--divider) 48px,
-      var(--divider) calc(100% - 48px), transparent) no-repeat top / 100% 1px;
-  }
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
 
-  @media (max-width: 900px) {
-    .persp { grid-template-columns: 1fr; gap: 44px; }
-    .pod-block { grid-template-columns: 1fr; gap: 26px; align-items: start; }
-    .pod-art { max-width: 124px; }
-    figure { max-width: 264px; }
-    .close { grid-template-columns: 1fr; gap: 44px; }
-    .btn { padding: 12px 18px; font-size: 14.5px; }
-    .close .btn { padding: 13px 20px; font-size: 15px; }
-    nav.links { gap: 10px; }
-    header.top a { font-size: 14px; padding: 12px 0; }
-    footer { font-size: 13px; }
-  }
-  @media (max-width: 700px) {
-    .row { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
-    .when { font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; }
-    .vp { grid-template-columns: 1fr; gap: 8px; }
-    .vp-n { padding-top: 0; }
-  }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+/* Rules fade to transparent at both ends instead of stopping cleanly — a
+   Nocturne signature. The ramp is 48px an end (one deck baseline unit),
+   painted from the same divider token. Freestanding rules fade; box
+   outlines, in-control separators, and short accent marks stay solid. */
+.hr {
+  height: 1px; border: 0; margin: var(--space-4) 0;
+  background: linear-gradient(to right,
+    transparent, var(--color-divider) 48px,
+    var(--color-divider) calc(100% - 48px), transparent);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { color: var(--color-accent); border-color: var(--color-accent); }
+.btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+.btn-primary:active { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { color: var(--color-accent); box-shadow: inset 0 0 0 1px var(--color-accent); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-800); color: var(--color-accent-100); }
+.tag-accent-2 { background: var(--color-accent-2-800); color: var(--color-accent-2-100); }
+.tag-neutral { background: var(--color-neutral-800); color: var(--color-neutral-100); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: none;
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 1px solid transparent; /* keeps layout; the row paints the fading rule */
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid transparent;
+}
+/* Row rules as row-level strips so the end-fade spans the row, not each cell. */
+.table thead tr {
+  background: linear-gradient(to right,
+    transparent, var(--color-divider) 48px,
+    var(--color-divider) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+.table tbody tr {
+  background: linear-gradient(to right,
+    transparent, color-mix(in srgb, var(--color-text) 8%, transparent) 48px,
+    color-mix(in srgb, var(--color-text) 8%, transparent) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+.table tbody tr:hover {
+  /* the hover tint layers over the row rule, which keeps painting */
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-text) 4%, transparent),
+                    color-mix(in srgb, var(--color-text) 4%, transparent)) no-repeat 0 0 / 100% 100%,
+    linear-gradient(to right,
+      transparent, color-mix(in srgb, var(--color-text) 8%, transparent) 48px,
+      color-mix(in srgb, var(--color-text) 8%, transparent) calc(100% - 48px), transparent) no-repeat bottom / 100% 1px;
+}
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+
+</style>
+<style>
+
+    :root {
+      --color-accent: oklch(0.72 0.11 230);
+      --color-accent-2: var(--color-accent);
+      --color-accent-300: oklch(0.85 0.07 230);
+      --color-accent-400: oklch(0.78 0.10 230);
+      --color-accent-500: oklch(0.72 0.11 230);
+      --color-accent-600: oklch(0.60 0.10 230);
+      --color-accent-700: oklch(0.48 0.085 230);
+      --color-accent-800: oklch(0.37 0.06 230);
+      --color-accent-900: oklch(0.27 0.04 230);
+      --color-bg: oklch(0.19 0.018 235);
+      --color-surface: oklch(0.24 0.02 235);
+      --color-section: oklch(0.31 0.075 235);
+      --color-section-glow: oklch(0.38 0.09 232);
+    }
+    html, body { margin: 0; background: var(--color-bg); }
+    a { color: var(--color-text); text-decoration: none; }
+    a:hover { color: var(--color-accent); }
+    :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+    .skip { position: absolute; left: -9999px; top: 12px; padding: 10px 16px; background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: var(--radius-md); font-size: 14px; z-index: 20; }
+    .skip:focus { left: 16px; }
+    .rule { background: linear-gradient(to right, transparent, var(--color-divider) 48px, var(--color-divider) calc(100% - 48px), transparent) no-repeat top / 100% 1px; }
+    @media (max-width: 940px) {
+      [data-hero] { grid-template-columns: 1fr !important; gap: 34px !important; align-items: start !important; padding-top: clamp(28px,4vh,44px) !important; }
+      [data-hero-img] { max-width: 260px; justify-self: start !important; }
+      [data-cols] { grid-template-columns: 1fr !important; gap: 34px !important; }
+      [data-band] { grid-template-columns: 1fr !important; gap: 26px !important; }
+      [data-pod] { grid-template-columns: 1fr !important; }
+      [data-pod] figure { max-width: 132px; }
+    }
+    @media (max-width: 620px) {
+      [data-entry] { grid-template-columns: 1fr !important; gap: 4px !important; }
+      [data-band] { grid-template-columns: 1fr !important; gap: 26px !important; }
+    }
+  
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="wrap" id="main">
+<div style="background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden">
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="top">
-    <span class="brand">Zach Best</span>
-    <a href="mailto:zach.best@si.com">zach.best@si.com</a>
-  </header>
+  <div style="max-width:1200px;margin:0 auto;padding:clamp(20px,3vw,32px) clamp(22px,5vw,72px) 0">
+    <header style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-family:var(--font-heading);font-size:14px;font-weight:500;letter-spacing:0.02em">Zach Best</span>
+      <nav aria-label="Links" style="display:flex;gap:20px;align-items:center;font-size:13px;color:var(--color-neutral-400)">
+        <a href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a>
+        <a href="https://x.com/zacharybest" target="_blank" rel="noopener" style="color:inherit">X</a>
+        <a href="mailto:zach.best@si.com" style="color:var(--color-accent-300);display:inline-block;padding:11px 0">zach.best@si.com</a>
+      </nav>
+    </header>
+  </div>
 
-  <section class="hero">
-    <div class="mark"></div>
-    <h1>Media entrepreneur &amp; executive.</h1>
-    <p class="sub">Co-founder of FanSided. EVP of Communities at Sports Illustrated</p>
-    <p class="bio">Zach has spent his career building connections between people, communities, audiences, and ideas. His experience spans education, entrepreneurship, media, and development, but the common thread has always been relationships. Whether building a company from the ground up, growing communities around some of the biggest brands in media, or developing new opportunities closer to home, he believes the strongest businesses are built around people first.</p>
-    <nav class="links" aria-label="Links">
-      <a class="btn btn-accent" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://x.com/zacharybest" target="_blank" rel="noopener">X</a>
-      <a class="btn" href="mailto:zach.best@si.com">Email</a>
-    </nav>
-  </section>
-
-  <section class="persp">
-    <figure>
-      <img src="headshot.png" alt="Zach Best" width="800" height="1000">
-    </figure>
-
-    <div class="vantage">
-      <h2 class="eyebrow">Three vantage points</h2>
-
-      <div class="vp">
-        <span class="vp-n">01</span>
-        <div class="vp-b">
-          <h3>Founder</b>
-          <span>Started FanSided from a blank page and built the architecture it needed — a distributed contributor network, hundreds of localized brands, and the editorial standards to hold them together.</span>
+  <main id="main">
+    <section data-hero style="max-width:1200px;margin:0 auto;padding:clamp(44px,9vh,104px) clamp(22px,5vw,72px) clamp(56px,9vh,104px);display:grid;grid-template-columns:minmax(0,1.32fr) minmax(240px,0.68fr);gap:clamp(40px,6vw,88px);align-items:end">
+      <div style="display:flex;flex-direction:column;gap:clamp(22px,3vw,30px)">
+        <span style="font-family:var(--font-heading);font-size:11.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--color-accent-300)">Founder · Operator · Executive</span>
+        <h1 style="font-family:var(--font-heading);font-size:clamp(42px,7.4vw,96px);line-height:0.94;letter-spacing:-0.038em;margin:0;font-weight:500;text-wrap:balance;max-width:16ch">Building things around people.</h1>
+        <p style="margin:0;font-size:clamp(16px,1.6vw,19px);line-height:1.5;color:var(--color-neutral-300);max-width:46ch;text-wrap:pretty">Co-founder of FanSided. EVP of Communities at Sports Illustrated. Developer of neighborhoods in his hometown.</p>
+        <div style="display:flex;gap:9px;flex-wrap:wrap;padding-top:2px">
+          <a href="mailto:zach.best@si.com" class="btn btn-primary" style="font-size:14px;padding:11px 19px">Get in touch</a>
+          <a href="#record" class="btn btn-secondary" style="font-size:14px;padding:11px 19px">Track record</a>
         </div>
       </div>
-
-      <div class="vp">
-        <span class="vp-n">02</span>
-        <div class="vp-b">
-          <h3>Operator</b>
-          <span>Scaled that network to acquisition, then led it through integration into a national media company and the platform shifts that followed.</span>
-        </div>
-      </div>
-
-      <div class="vp">
-        <span class="vp-n">03</span>
-        <div class="vp-b">
-          <h3>Executive</b>
-          <span>Runs communities at Sports Illustrated today, aligning editorial, product and sales across a portfolio of brands.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="record">
-    <h2 class="eyebrow">Track record</h2>
-
-    <div class="row">
-      <span class="when">Present</span>
-      <div class="what">
-        <h3>EVP, Communities — Sports Illustrated</h3>
-        <span>Oversees the SI ONSI network and the FanSided brands.</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="when">Present</span>
-      <div class="what">
-        <h3>Developer — Harper Ridge</h3>
-        <span>Investor and developer of a 159-lot neighborhood. Over 200 lots developed in the past five years.</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="when">Prior</span>
-      <div class="what">
-        <h3>General Manager, Minute Media</h3>
-        <span>Ran the FanSided business ahead of the Sports Illustrated rebrand.</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="when">2015</span>
-      <div class="what">
-        <h3>FanSided acquired by Time Inc.</h3>
-        <span>Founder to executive, through the integration into a national media organization.</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="when">2007</span>
-      <div class="what">
-        <h3>Co-founded FanSided</h3>
-        <span>One sports site became a contributor network of hundreds of localized fan brands.</span>
-      </div>
-    </div>
-
-    <div class="row">
-      <span class="when">Earlier</span>
-      <div class="what">
-        <h3>Seven years as an educator</h3>
-        <span>Where the habits of clear communication and developing people were formed.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="pod">
-    <h2 class="eyebrow">Podcast</h2>
-
-    <div class="pod-block">
-      <figure class="pod-art">
-        <img src="podcast.jpg" alt="What&rsquo;s Your Y? podcast artwork" width="400" height="400">
+      <figure data-hero-img style="margin:0;justify-self:end;width:100%;aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;background:var(--color-surface);box-shadow:var(--shadow-md);position:relative">
+        <img src="headshot-graded.png" alt="Zach Best" style="width:100%;height:100%;object-fit:cover;display:block">
+        <span style="position:absolute;inset:auto 0 0 0;height:34%;background:linear-gradient(to top,var(--color-bg),transparent);opacity:0.55;pointer-events:none"></span>
       </figure>
+    </section>
 
-      <div class="pod-body">
-        <h3>What&rsquo;s Your Y?</h3>
-        <p>Conversations built with Special Olympics athletes and Unified partners, made as part of FanSided Podcasts. Inclusive storytelling as professional practice, not charity.</p>
-        <div class="pod-latest" id="pod-latest" hidden>
-          <em>Latest</em>
-          <b id="pod-latest-title"></b>
-          <span id="pod-latest-date"></span>
+    <section aria-label="At a glance" style="background:linear-gradient(140deg,var(--color-section),var(--color-section-glow));padding:clamp(38px,6vw,60px) 0">
+      <div data-band style="max-width:1200px;margin:0 auto;padding:0 clamp(22px,5vw,72px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:var(--font-heading);font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-0.03em;font-weight:500">2007</span>
+          <span style="font-size:14px;line-height:1.5;color:var(--color-neutral-200);max-width:24ch">Co-founded FanSided with his brother, from a blank page</span>
         </div>
-        <div class="pod-links">
-          <a class="btn btn-accent" id="pod-spotify" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
-          <a class="btn" id="pod-apple" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple Podcasts</a>
-          <a class="btn" id="pod-youtube" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:var(--font-heading);font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-0.03em;font-weight:500">300+</span>
+          <span style="font-size:14px;line-height:1.5;color:var(--color-neutral-200);max-width:24ch">Localized fan brands, acquired by Time Inc. in 2015</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:var(--font-heading);font-size:clamp(30px,4vw,46px);line-height:1;letter-spacing:-0.03em;font-weight:500">200+</span>
+          <span style="font-size:14px;line-height:1.5;color:var(--color-neutral-200);max-width:24ch">Residential lots developed in the past five years</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="close">
-    <div class="close-l">
-      <div class="mark"></div>
-      <h2 class="close-lead">Open to board service and selective advisory work.</h2>
-      <p class="close-body">The strongest boards pair rigorous governance with operating experience. Zach brings all three vantage points to the table.</p>
-      <a class="btn btn-accent" href="mailto:zach.best@si.com">Get in touch</a>
-    </div>
+    <section data-cols style="max-width:1200px;margin:0 auto;padding:clamp(64px,11vh,132px) clamp(22px,5vw,72px) 0;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start">
+      <h2 style="font-family:var(--font-heading);font-size:11.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-500);margin:0;position:sticky;top:28px">Background</h2>
+      <div style="display:flex;flex-direction:column;gap:clamp(30px,4vw,44px)">
+        <p style="margin:0;font-size:clamp(19px,2.2vw,26px);line-height:1.4;letter-spacing:-0.018em;color:var(--color-neutral-100);max-width:30ch;text-wrap:balance">Zach has spent his career building connections between people, communities, audiences, and ideas.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.72;color:var(--color-neutral-400);max-width:66ch;text-wrap:pretty">His experience spans education, entrepreneurship, media, and development, but the common thread has always been relationships. Whether building a company from the ground up, growing communities around some of the biggest brands in media, or developing new opportunities closer to home, he believes the strongest businesses are built around people first.</p>
+        <div style="display:flex;flex-direction:column;padding-top:4px">
+          <div data-entry class="rule" style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:22px 0;align-items:baseline">
+            <span style="font-family:var(--font-heading);font-size:15.5px;font-weight:500;letter-spacing:-0.01em">Founder</span>
+            <span style="font-size:15px;line-height:1.65;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">A distributed contributor network, hundreds of localized brands, and the editorial standards to hold them together.</span>
+          </div>
+          <div data-entry class="rule" style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:22px 0;align-items:baseline">
+            <span style="font-family:var(--font-heading);font-size:15.5px;font-weight:500;letter-spacing:-0.01em">Operator</span>
+            <span style="font-size:15px;line-height:1.65;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Scaled that network to acquisition, then led it through integration into a national media company and the platform shifts that followed.</span>
+          </div>
+          <div data-entry class="rule" style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:22px 0;align-items:baseline;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px,linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat bottom / 100% 1px">
+            <span style="font-family:var(--font-heading);font-size:15.5px;font-weight:500;letter-spacing:-0.01em">Executive</span>
+            <span style="font-size:15px;line-height:1.65;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Runs communities at Sports Illustrated and FanSided today, aligning editorial, product and sales across a portfolio of brands.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <ul class="envs">
-      <li>Media networks and publishing groups</li>
-      <li>Sports and entertainment platforms</li>
-      <li>Digital community and technology businesses</li>
-      <li>Mission-driven and inclusion-focused organizations</li>
-      <li>Real estate development and land use</li>
-      <li>Nonprofits and youth development</li>
-    </ul>
-  </section>
+    <section style="margin-top:clamp(64px,11vh,132px);background:linear-gradient(to bottom,color-mix(in srgb,var(--color-surface) 70%,transparent),transparent)">
+      <div data-cols style="max-width:1200px;margin:0 auto;padding:clamp(48px,7vw,76px) clamp(22px,5vw,72px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.78fr);gap:clamp(32px,5vw,72px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+          <div style="width:28px;height:2px;background:var(--color-accent)"></div>
+          <h2 style="margin:0;font-family:var(--font-heading);font-size:clamp(26px,3.4vw,40px);line-height:1.16;letter-spacing:-0.026em;font-weight:500;max-width:24ch;text-wrap:balance">Open to board service, advisory, and select investments.</h2>
+          <p style="margin:0;font-size:16px;line-height:1.7;color:var(--color-neutral-400);max-width:46ch;text-wrap:pretty">The strongest boards pair rigorous governance with operating experience. Zach brings all three vantage points to the table, and invests selectively in media, community businesses, and local development.</p>
+          <a href="mailto:zach.best@si.com" class="btn btn-primary" style="font-size:14.5px;padding:12px 20px;margin-top:6px">zach.best@si.com</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <span style="font-family:var(--font-heading);font-size:11.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-500)">Environments</span>
+          <ul style="display:flex;flex-direction:column;list-style:none;margin:0;padding:0">
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Media networks and publishing groups</li>
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Sports and entertainment platforms</li>
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Digital community and technology businesses</li>
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Mission-driven and inclusion-focused organizations</li>
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Real estate development and land use</li>
+            <li class="rule" style="font-size:14.5px;line-height:1.5;color:var(--color-neutral-300);padding:13px 0">Nonprofits and youth development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <footer>© 2026 Zach Best</footer>
+    <section id="record" data-cols style="max-width:1200px;margin:0 auto;padding:clamp(64px,11vh,132px) clamp(22px,5vw,72px) 0;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start">
+      <h2 style="font-family:var(--font-heading);font-size:11.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-500);margin:0;position:sticky;top:28px">Track record</h2>
+      <div style="display:flex;flex-direction:column">
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline">
+          <span style="font-size:13px;color:var(--color-accent-300);font-variant-numeric:tabular-nums">Present</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">EVP, Communities — Sports Illustrated</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Oversees the SI ONSI network and the FanSided brands.</span>
+          </div>
+        </div>
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline">
+          <span style="font-size:13px;color:var(--color-accent-300);font-variant-numeric:tabular-nums">Present</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">Developer — Harper Ridge</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Investor and developer of a 159-lot neighborhood. Over 200 lots developed in the past five years.</span>
+          </div>
+        </div>
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">Prior</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">General Manager — Minute Media</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Ran the FanSided business ahead of the move to Sports Illustrated.</span>
+          </div>
+        </div>
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">2015</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">FanSided acquired by Time Inc.</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Founder to executive, through the integration into a national media organization.</span>
+          </div>
+        </div>
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">2007</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">Co-founded FanSided</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">One sports site became a contributor network of hundreds of localized fan brands.</span>
+          </div>
+        </div>
+        <div data-entry class="rule" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px,linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat bottom / 100% 1px">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">Earlier</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">Seven years as an educator</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:56ch;text-wrap:pretty">Where the habits of clear communication and developing people were formed.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section data-cols style="max-width:1200px;margin:0 auto;padding:clamp(64px,11vh,132px) clamp(22px,5vw,72px) 0;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start">
+      <h2 style="font-family:var(--font-heading);font-size:11.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-500);margin:0;position:sticky;top:28px">Podcast</h2>
+      <div data-pod style="display:grid;grid-template-columns:104px minmax(0,1fr);gap:clamp(20px,3vw,32px);align-items:start;padding:26px 0;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px,linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat bottom / 100% 1px">
+        <figure style="margin:0;aspect-ratio:1;border-radius:var(--radius-md);overflow:hidden;background:var(--color-surface)">
+          <img src="podcast.jpg" alt="What's Your Y? podcast artwork" style="width:100%;height:100%;object-fit:cover;display:block">
+        </figure>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+          <h3 style="margin:0;font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em">What's Your Y?</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.62;color:var(--color-neutral-400);max-width:54ch;text-wrap:pretty">Conversations built with Special Olympics athletes and Unified partners, made as part of FanSided Podcasts. Inclusive storytelling as professional practice, not charity.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;padding-top:4px">
+            <a href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:13.5px;padding:10px 16px">Spotify</a>
+            <a href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13.5px;padding:10px 16px">Apple Podcasts</a>
+            <a href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:13.5px;padding:10px 16px">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section data-cols style="max-width:1200px;margin:0 auto;padding:clamp(64px,11vh,132px) clamp(22px,5vw,72px) 0;display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start">
+      <h2 style="font-family:var(--font-heading);font-size:11.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--color-neutral-500);margin:0;position:sticky;top:28px">Press &amp; writing</h2>
+      <div style="display:flex;flex-direction:column">
+        <a data-entry href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline;color:inherit;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">2025</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">From KC Chiefs Fan to Media Mogul</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:58ch;text-wrap:pretty">The Corporate Couch — on building a remote culture before remote work was common, leading through three acquisitions, and hiring for passion. <span style="color:var(--color-accent-300);white-space:nowrap">Listen ↗</span></span>
+          </div>
+        </a>
+        <a data-entry href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline;color:inherit;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">2022</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">What Businesses Can Learn From the Inclusion Revolution in Sports</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:58ch;text-wrap:pretty">Hashtag Sports — on the FanSided and Minute Media partnership with Special Olympics, and what the 2022 USA Games taught the company about inclusion. <span style="color:var(--color-accent-300);white-space:nowrap">Read the article ↗</span></span>
+          </div>
+        </a>
+        <a data-entry href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener" style="display:grid;grid-template-columns:88px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:24px 0;align-items:baseline;color:inherit;background:linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat top / 100% 1px,linear-gradient(to right,transparent,var(--color-divider) 48px,var(--color-divider) calc(100% - 48px),transparent) no-repeat bottom / 100% 1px">
+          <span style="font-size:13px;color:var(--color-neutral-500);font-variant-numeric:tabular-nums">2015</span>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <h3 style="font-family:var(--font-heading);font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-0.015em;margin:0">Nine Questions with Zach and Adam Best</h3>
+            <span style="font-size:14.5px;line-height:1.6;color:var(--color-neutral-400);max-width:58ch;text-wrap:pretty">417 Magazine — the brothers on growing FanSided from one Chiefs blog into more than 300 sites, and joining Time Inc. <span style="color:var(--color-accent-300);white-space:nowrap">Read the interview ↗</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer style="max-width:1200px;margin:clamp(72px,12vh,140px) auto 0;padding:22px clamp(22px,5vw,72px) clamp(40px,6vw,64px);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--color-neutral-500)" class="rule">
+      <span>© 2026 Zach Best</span>
+      <span style="display:flex;gap:18px">
+        <a href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener" style="color:inherit">LinkedIn</a>
+        <a href="https://x.com/zacharybest" target="_blank" rel="noopener" style="color:inherit">X</a>
+      </span>
+    </footer>
+  </main>
 </div>
-
-<script>
-// Latest episode, pulled from the podcast RSS feed. Put the feed URL here.
-// If the feed's host doesn't allow cross-origin reads, or the URL is blank,
-// the line stays hidden and the rest of the section is unaffected.
-const PODCAST_FEED = "";
-
-if (PODCAST_FEED) {
-  fetch(PODCAST_FEED)
-    .then(r => r.ok ? r.text() : Promise.reject(r.status))
-    .then(xml => {
-      const doc = new DOMParser().parseFromString(xml, "application/xml");
-      const item = doc.querySelector("item");
-      if (!item) return;
-      const title = item.querySelector("title")?.textContent?.trim();
-      const pub = item.querySelector("pubDate")?.textContent;
-      if (!title) return;
-      document.getElementById("pod-latest-title").textContent = title;
-      if (pub) {
-        const d = new Date(pub);
-        if (!isNaN(d)) {
-          document.getElementById("pod-latest-date").textContent =
-            d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
-        }
-      }
-      document.getElementById("pod-latest").hidden = false;
-    })
-    .catch(() => {});
-}
-</script>
 </body>
 </html>

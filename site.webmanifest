@@ -3,8 +3,8 @@
   "short_name": "Zach Best",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#11171f",
-  "theme_color": "#11171f",
+  "background_color": "#0e0e11",
+  "theme_color": "#0e0e11",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/favicon.png", "sizes": "512x512", "type": "image/png" }

@@ -8,7 +8,7 @@
 <meta name="author" content="Zach Best">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://zacharybest.com/">
-<meta name="theme-color" content="#11171f">
+<meta name="theme-color" content="#0e0e11">
 <meta name="color-scheme" content="dark">
 
 <meta property="og:type" content="profile">
@@ -39,11 +39,10 @@
 <link rel="me" href="https://www.linkedin.com/in/zacharybest">
 <link rel="me" href="https://x.com/zacharybest">
 
-<script>if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="headshot.webp" type="image/webp" imagesrcset="headshot-480.webp 480w, headshot.webp 800w" imagesizes="(max-width: 720px) 280px, 380px" fetchpriority="high">
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="portrait.webp" imagesrcset="portrait-640.webp 640w, portrait.webp 1100w" imagesizes="(max-width: 759px) 118vw, 60vw" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -62,406 +61,350 @@
 
 <style>
 :root{
-  --bg:oklch(0.185 0.018 240);
-  --bg-2:oklch(0.215 0.02 238);
-  --surface:oklch(0.235 0.022 236);
-  --surface-2:oklch(0.27 0.026 236);
-  --section:oklch(0.30 0.07 236);
-  --section-glow:oklch(0.37 0.085 233);
-  --text:oklch(0.95 0.006 250);
-  --text-2:oklch(0.86 0.014 250);
-  --text-3:oklch(0.74 0.018 250);
-  --text-4:oklch(0.64 0.02 250);
-  --accent:oklch(0.76 0.11 228);
-  --accent-soft:oklch(0.86 0.07 228);
-  --accent-ink:oklch(0.42 0.08 230);
-  --line:color-mix(in oklch,var(--text) 13%,transparent);
-  --line-2:color-mix(in oklch,var(--text) 22%,transparent);
-  --font:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --r-sm:6px;--r-md:10px;--r-lg:16px;
-  --gutter:clamp(20px,5vw,72px);
-  --max:1240px;
-  --section-gap:clamp(88px,13vh,152px);
-  --ease:cubic-bezier(.2,.7,.2,1);
+  --ink:#0e0e11;
+  --ink-2:#15151a;
+  --ivory:#f2f0ea;
+  --paper:#f7f5ef;
+  --muted:#c9c6bd;
+  --dim:#9b988f;
+  --line:#2e2d2b;
+  --line-2:#3a3936;
+  --edge:#77756f;
+  --accent:#a9cdea;
+  --serif:"Newsreader","Lora",Georgia,"Times New Roman",serif;
+  --sans:"Archivo","Inter","Helvetica Neue",Arial,sans-serif;
+  --pad:20px;
+  --max:1320px;
+  --gap:64px;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--font);font-optical-sizing:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--ink);color:var(--ivory);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
-h1,h2,h3,p,blockquote,figure,ul,ol{margin:0}
-ul,ol{padding:0;list-style:none}
-a{color:inherit;text-decoration:none;transition:color .2s}
-a:hover{color:var(--accent)}
+h1,h2,h3,p,ol,ul,dl,dd,blockquote,figure{margin:0}
+ol,ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
 :focus{outline:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-::selection{background:color-mix(in oklch,var(--accent) 35%,transparent)}
-.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
-.eyebrow{font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-soft)}
-.fade-rule{background:linear-gradient(to right,transparent,var(--line) 48px,var(--line) calc(100% - 48px),transparent) no-repeat top/100% 1px}
-.skip{position:absolute;left:-9999px;top:12px;z-index:50;padding:10px 16px;background:var(--surface);border:1px solid var(--accent);border-radius:var(--r-md);font-size:14px}
+::selection{background:rgba(169,205,234,.35)}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
+.label{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.serif{font-family:var(--serif)}
+.skip{position:absolute;left:-9999px;top:12px;z-index:60;padding:10px 16px;background:var(--ivory);color:var(--ink);border-radius:999px;font-size:14px;font-weight:600}
 .skip:focus{left:16px}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:11px 18px;border-radius:999px;border:1px solid transparent;font:500 14px/1.2 var(--font);letter-spacing:-.005em;cursor:pointer;background:none;color:var(--text);transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease)}
-.btn svg{width:16px;height:16px;flex:none}
-.btn-primary{background:var(--accent);color:oklch(0.18 0.03 240);border-color:var(--accent)}
-.btn-primary:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:oklch(0.18 0.03 240)}
-.btn-outline{border-color:var(--line-2)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent);background:color-mix(in oklch,var(--accent) 8%,transparent)}
-.btn-ghost{color:var(--accent-soft);padding-inline:6px}
-.btn-ghost:hover{color:var(--text)}
-.btn:active{transform:translateY(1px)}
-
-/* header */
-.site-header{position:sticky;top:0;z-index:30;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
-.site-header.scrolled{background:color-mix(in oklch,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(14px);backdrop-filter:saturate(1.4) blur(14px);box-shadow:0 1px 0 var(--line)}
-.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.brand{font-weight:600;font-size:15px;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:10px;padding:10px 0}
-.brand-mark{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:12px;font-weight:600;letter-spacing:-.02em;background:linear-gradient(140deg,var(--section-glow),var(--section));box-shadow:inset 0 0 0 1px var(--line-2);color:var(--text)}
-.nav{display:flex;align-items:center;gap:clamp(4px,1.5vw,10px)}
-.nav-links{display:flex;gap:2px}
-.nav-links a{font-size:14px;color:var(--text-3);padding:10px 12px;border-radius:999px;transition:color .2s,background .2s}
-.nav-links a:hover{color:var(--text);background:color-mix(in oklch,var(--text) 6%,transparent)}
-.nav-links a.active{color:var(--text)}
-.nav .btn{min-height:40px;padding:9px 16px;font-size:13.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid var(--edge);font:500 15px/1 var(--sans);color:var(--ivory);background:none;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+.btn:hover{border-color:var(--ivory)}
+.btn-solid{background:var(--ivory);border-color:var(--ivory);color:var(--ink);font-weight:600}
+.btn-solid:hover{background:#fff;border-color:#fff}
+.btn-sm{min-height:44px;padding:0 18px;font-size:14px}
 
 /* hero */
-.hero-glow{position:absolute;inset:0 0 auto 0;height:min(1100px,110vh);background:radial-gradient(ellipse 65% 80% at 82% 0%,color-mix(in oklch,var(--section-glow) 75%,transparent),transparent 70%);pointer-events:none;z-index:-1}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,380px);gap:clamp(32px,6vw,88px);align-items:center;padding-block:clamp(36px,7vh,88px) clamp(64px,11vh,120px)}
-.hero-copy{display:flex;flex-direction:column;gap:clamp(22px,3vw,30px)}
-.hero h1{font-size:clamp(68px,12.5vw,176px);font-weight:500;line-height:.86;letter-spacing:-.055em;margin-left:-.04em}
-.hero h1 span{display:block}
-.lede{font-size:clamp(19px,2vw,24px);line-height:1.42;letter-spacing:-.014em;color:var(--text-2);max-width:31ch;text-wrap:balance}
-.hero-roles{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--text-3)}
-.hero-roles li{display:inline-flex;align-items:center;gap:8px}
-.hero-roles li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 22%,transparent)}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
-.portrait{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;background:var(--surface);box-shadow:0 0 0 1px var(--line-2),0 30px 60px -20px rgba(0,0,0,.7),0 0 120px -30px color-mix(in oklch,var(--accent) 45%,transparent)}
-.portrait img{width:100%;height:100%;object-fit:cover}
-.portrait::after{content:"";position:absolute;inset:auto 0 0 0;height:30%;background:linear-gradient(to top,color-mix(in oklch,var(--bg) 70%,transparent),transparent);pointer-events:none}
+.hero{position:relative;overflow:hidden}
+.hero-main{position:relative;min-height:max(100svh,700px);display:flex;flex-direction:column}
+.hero-photo{position:absolute;z-index:0;left:50%;top:136px;width:min(118vw,560px);max-width:none;transform:translateX(-50%);pointer-events:none}
+.hero-main::after{content:"";position:absolute;z-index:0;left:0;right:0;bottom:0;height:52%;background:linear-gradient(to top,var(--ink) 0%,var(--ink) 42%,rgba(14,14,17,.8) 66%,rgba(14,14,17,0) 100%);pointer-events:none}
+.top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:6px;border-bottom:1px solid var(--line-2)}
+.top .site{padding:12px 0}
+.top nav ul{display:flex;align-items:center;gap:4px}
+.top nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:13px;font-weight:500;color:var(--muted)}
+.top nav a:hover{color:var(--ivory)}
+.top nav li:last-child a:not(.btn){padding-right:0}
+.top .only-wide{display:none}
+.hero-copy{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding-block:14px 22px}
+.hero-name{display:flex;flex-direction:column;gap:6px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(68px,20vw,84px);line-height:.95;letter-spacing:-.035em;white-space:nowrap;color:var(--paper)}
+.hero-bottom{display:flex;flex-direction:column;gap:18px}
+.lede{font-family:var(--serif);font-size:clamp(22px,6.2vw,26px);line-height:1.18;letter-spacing:-.01em;color:var(--paper);text-wrap:balance;max-width:21em}
+.lede em{color:var(--accent)}
+.marks{display:flex;align-items:center;gap:18px}
+.marks img{height:21px;width:auto;opacity:.9}
+.cta{display:flex;gap:10px}
+.cta .btn-solid{flex:1}
 
-/* band */
-.band{background:linear-gradient(140deg,var(--section),var(--section-glow));padding-top:clamp(52px,7vw,84px);position:relative;overflow:hidden}
-.band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 100% 0%,color-mix(in oklch,var(--accent) 18%,transparent),transparent 70%);pointer-events:none}
-.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:relative}
-.stat{display:flex;flex-direction:column;gap:12px;padding-inline:clamp(20px,3vw,40px)}
-.stat:first-child{padding-left:0}
-.stat+.stat{background:linear-gradient(to bottom,transparent,color-mix(in oklch,var(--text) 22%,transparent) 25%,color-mix(in oklch,var(--text) 22%,transparent) 75%,transparent) no-repeat left/1px 100%}
-.stat dt{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-soft)}
-.stat .num{font-size:clamp(56px,7.4vw,96px);font-weight:500;line-height:.88;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
-.stat .desc{font-size:15px;line-height:1.5;color:var(--text-2);max-width:25ch;text-wrap:pretty}
-.logos{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(48px,6vw,72px);padding-block:clamp(24px,3vw,32px);background:linear-gradient(to right,transparent,color-mix(in oklch,var(--text) 20%,transparent) 48px,color-mix(in oklch,var(--text) 20%,transparent) calc(100% - 48px),transparent) no-repeat top/100% 1px;position:relative}
-.logos h2{font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--text-2)}
-.logos ul{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px 36px}
-.logos img{height:28px;width:auto;opacity:.8;transition:opacity .2s}
-.logos li:hover img{opacity:1}
-.logos .sm img{height:23px}
+/* stat strip */
+.strip{position:relative;z-index:1;border-top:1px solid var(--line-2)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-block:20px 22px}
+.stats dt{font-family:var(--serif);font-size:clamp(32px,9vw,40px);line-height:1;letter-spacing:-.02em;color:var(--paper)}
+.stats dd{margin-top:6px;font-size:12.5px;line-height:1.35;color:var(--muted)}
 
 /* sections */
-.section{padding-top:var(--section-gap)}
-.section-head{display:flex;flex-direction:column;gap:14px;max-width:780px}
-.section-head h2{font-size:clamp(30px,4vw,50px);font-weight:500;line-height:1.06;letter-spacing:-.032em;text-wrap:balance}
-.section-head p{font-size:17px;line-height:1.7;color:var(--text-3);max-width:56ch;text-wrap:pretty}
-.h2-sm{font-size:clamp(26px,3vw,38px) !important;line-height:1.1 !important}
-
-/* about */
-.about{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:end}
-.about blockquote{display:flex;flex-direction:column;gap:22px}
-.about blockquote::before{content:"";width:36px;height:2px;background:var(--accent)}
-.about blockquote p{font-size:clamp(32px,4.5vw,58px);font-weight:500;line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
-.about-body{display:flex;flex-direction:column;gap:18px}
-.about-body p:first-child{font-size:18px;line-height:1.65;color:var(--text-2)}
-.about-body p+p{font-size:16px;line-height:1.75;color:var(--text-3);text-wrap:pretty}
+.sec{padding-top:var(--gap)}
+.sec-grid{display:grid;gap:22px}
+.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7.4vw,44px);line-height:1.08;letter-spacing:-.022em;color:var(--paper);text-wrap:balance}
+.sec .intro{margin-top:14px;font-size:16px;line-height:1.6;color:var(--muted);max-width:56ch;text-wrap:pretty}
+.rows{border-top:1px solid var(--line-2)}
+.rows>li{border-bottom:1px solid var(--line)}
 
 /* board */
-.board{display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)}
-.bring h3{font-size:clamp(19px,2vw,23px);font-weight:500;letter-spacing:-.02em;margin-bottom:18px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
-.card{position:relative;display:flex;flex-direction:column;gap:12px;padding:clamp(24px,2.8vw,34px);border-radius:var(--r-lg);background:linear-gradient(180deg,var(--surface),color-mix(in oklch,var(--surface) 70%,var(--bg)));box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .3s,transform .3s var(--ease)}
-.card:hover{box-shadow:inset 0 0 0 1px color-mix(in oklch,var(--accent) 45%,transparent),0 18px 40px -24px rgba(0,0,0,.8);transform:translateY(-2px)}
-.card .idx{font-size:13px;font-weight:500;color:var(--accent);font-variant-numeric:tabular-nums}
-.card h4{font-size:clamp(19px,2vw,23px);font-weight:500;letter-spacing:-.02em;line-height:1.2;margin:0}
-.card p{font-size:15.5px;line-height:1.65;color:var(--text-3);text-wrap:pretty}
-.envs{display:flex;flex-direction:column;gap:14px}
-.envs h3{font-size:13px;font-weight:500;color:var(--text-4)}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags li{font-size:13.5px;padding:8px 14px;border-radius:999px;color:var(--accent-soft);box-shadow:inset 0 0 0 1px color-mix(in oklch,var(--accent) 45%,transparent);background:color-mix(in oklch,var(--accent) 6%,transparent)}
+.bring li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 10px;padding:16px 0}
+.bring .n{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accent);line-height:1.35}
+.bring h3{font:600 16.5px/1.3 var(--sans);letter-spacing:-.005em;color:var(--paper)}
+.bring p{grid-column:2;font-size:15px;line-height:1.5;color:var(--muted);text-wrap:pretty}
+.fit{margin-top:18px;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.fit strong{font-weight:600;color:var(--ivory)}
+
+/* quote */
+.quote{padding-block:var(--gap) 0}
+.quote blockquote{padding-block:34px;border-block:1px solid var(--line-2);display:grid;gap:16px}
+.quote blockquote p:first-child{font-family:var(--serif);font-style:italic;font-size:clamp(28px,7.6vw,52px);line-height:1.08;letter-spacing:-.02em;color:var(--paper);text-wrap:balance}
+.quote blockquote p+p{font-size:15.5px;line-height:1.55;color:var(--muted);max-width:52ch}
 
 /* record */
-.record{display:grid;grid-template-columns:minmax(0,.42fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
-.record .section-head{position:sticky;top:104px}
-.timeline{position:relative}
-.timeline li{position:relative;display:grid;grid-template-columns:96px minmax(0,1fr);gap:clamp(14px,2.5vw,36px);padding:26px 0 26px 28px;align-items:baseline}
-.timeline::before{content:"";position:absolute;left:5px;top:34px;bottom:34px;width:1px;background:linear-gradient(to bottom,var(--accent),var(--line-2) 22%,var(--line) 85%,transparent)}
-.timeline li::before{content:"";position:absolute;left:1px;top:33px;width:9px;height:9px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 1.5px var(--text-4)}
-.timeline li:first-child::before{background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklch,var(--accent) 22%,transparent)}
-.timeline li+li{background:linear-gradient(to right,transparent,var(--line) 48px,var(--line) calc(100% - 48px),transparent) no-repeat top/100% 1px}
-.when{font-size:13px;font-weight:500;color:var(--text-4);font-variant-numeric:tabular-nums}
-li:first-child .when{color:var(--accent-soft)}
-.timeline h3{font-size:clamp(18px,1.9vw,21px);font-weight:500;letter-spacing:-.015em;line-height:1.3}
-.timeline p{font-size:15px;line-height:1.6;color:var(--text-3);max-width:56ch;margin-top:6px;text-wrap:pretty}
+.where{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:18px}
+.where img{height:19px;width:auto;opacity:.75}
+.timeline li{display:grid;grid-template-columns:70px minmax(0,1fr);gap:2px 10px;padding:14px 0;align-items:baseline}
+.timeline .when{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-variant-numeric:tabular-nums}
+.timeline li:first-child .when{color:var(--accent)}
+.timeline h3{font:600 16px/1.3 var(--sans);color:var(--paper)}
+.timeline p{grid-column:2;font-size:14.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
 
-/* voice */
-.voice-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:start;margin-top:clamp(28px,4vw,44px)}
-.pod{display:grid;gap:22px;padding:clamp(22px,2.6vw,30px);border-radius:var(--r-lg);background:linear-gradient(160deg,color-mix(in oklch,var(--section) 55%,var(--surface)),var(--surface));box-shadow:inset 0 0 0 1px var(--line-2),0 24px 50px -30px rgba(0,0,0,.8)}
-.pod figure{max-width:220px;aspect-ratio:1;border-radius:var(--r-md);overflow:hidden;background:var(--bg);box-shadow:0 12px 30px -12px rgba(0,0,0,.7)}
-.pod figure img{width:100%;height:100%;object-fit:cover}
-.pod-body{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
-.pod .meta{font-size:13px;font-weight:500;color:var(--accent-soft)}
-.pod h3{font-size:clamp(23px,2.4vw,29px);font-weight:500;letter-spacing:-.022em}
-.pod p{font-size:15px;line-height:1.62;color:var(--text-2);text-wrap:pretty}
-.pod .btns{display:flex;gap:8px;flex-wrap:wrap;padding-top:8px}
-.press li+li{background:linear-gradient(to right,transparent,var(--line) 48px,var(--line) calc(100% - 48px),transparent) no-repeat top/100% 1px}
-.press a{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:clamp(14px,2vw,28px);padding:24px 8px 24px 0;align-items:baseline;border-radius:var(--r-sm)}
-.press a:hover{color:inherit}
-.press .src{display:block;font-size:13px;color:var(--text-4);margin-bottom:6px}
-.press h3{font-size:clamp(17px,1.8vw,20px);font-weight:500;letter-spacing:-.015em;line-height:1.35;transition:color .2s}
-.press a:hover h3{color:var(--accent-soft)}
-.press .arrow{color:var(--accent);transition:transform .25s var(--ease);align-self:center}
-.press a:hover .arrow{transform:translate(3px,-3px)}
-.badge{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;vertical-align:2px;color:oklch(0.18 0.03 240);background:var(--accent)}
+/* press */
+.pod{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;padding:16px;border:1px solid var(--line-2);border-radius:14px;background:var(--ink-2)}
+.pod img{width:76px;height:76px;border-radius:8px}
+.pod h3{font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.1;letter-spacing:-.015em;color:var(--paper);margin-top:4px}
+.pod p{grid-column:1/-1;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.pod .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.press{margin-top:18px}
+.press a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:15px 0;align-items:center;min-height:44px}
+.press .src{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.press h3{grid-column:1;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.22;letter-spacing:-.008em;color:var(--paper);text-wrap:pretty;transition:color .2s}
+.press .arrow{grid-row:1/3;grid-column:2;color:var(--accent);font-size:17px;transition:transform .2s}
+.press a:hover h3{color:var(--accent)}
+.press a:hover .arrow{transform:translate(2px,-2px)}
+.new{margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--accent);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.08em}
 
 /* contact */
-.contact{margin-top:clamp(104px,16vh,184px);background:radial-gradient(ellipse 80% 120% at 12% 100%,color-mix(in oklch,var(--section-glow) 65%,transparent),transparent 70%)}
-.contact-inner{padding-block:clamp(56px,9vw,112px);display:flex;flex-direction:column;gap:24px;align-items:flex-start}
-.contact h2{font-size:clamp(44px,7.5vw,104px);font-weight:500;line-height:.94;letter-spacing:-.048em}
-.contact p{font-size:18px;line-height:1.6;color:var(--text-2);max-width:46ch}
-.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:8px}
-.email{font-size:clamp(20px,2.6vw,30px);letter-spacing:-.02em;color:var(--accent-soft);padding:6px 0;border-bottom:1px solid var(--accent-ink);margin-right:8px}
+.contact{margin-top:var(--gap);border-top:1px solid var(--line-2)}
+.contact-in{padding-block:52px 40px;display:grid;gap:18px}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(56px,16vw,120px);line-height:.92;letter-spacing:-.035em;color:var(--paper)}
+.contact p{font-size:17px;line-height:1.5;color:var(--muted);max-width:40ch}
+.email{justify-self:start;font-family:var(--serif);font-size:clamp(24px,6.6vw,34px);letter-spacing:-.012em;color:var(--accent);border-bottom:1px solid var(--edge);padding:6px 0}
 .email:hover{border-color:var(--accent)}
-.copy{min-height:40px;padding:8px 14px;font-size:13px}
-.copy[data-done] {color:var(--accent);border-color:var(--accent)}
-.site-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:20px clamp(28px,5vw,44px);font-size:13px;color:var(--text-4)}
-.site-footer ul{display:flex;gap:4px}
-.site-footer ul a{display:inline-block;padding:10px}
-.site-footer ul li:last-child a{padding-right:0}
+.contact .acts{display:flex;flex-wrap:wrap;gap:10px;padding-top:6px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:8px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
+.foot ul{display:flex;gap:2px}
+.foot a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
+.foot a:hover{color:var(--ivory)}
+.foot li:last-child a{padding-right:0}
 
-/* reveal (only when JS is on) */
-.js .rv{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
+/* phone dock */
+.dock{position:fixed;z-index:40;left:0;right:0;bottom:0;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));background:rgba(14,14,17,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line-2);display:flex;gap:10px;transform:translateY(110%);transition:transform .3s cubic-bezier(.2,.7,.2,1);visibility:hidden}
+.dock.show{transform:none;visibility:visible}
+.dock .btn{min-height:48px}
+.dock .btn-solid{flex:1}
+.has-dock{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
 
-/* responsive */
-@media (max-width:960px){
-  .hero{grid-template-columns:minmax(0,1fr) minmax(200px,300px)}
-  .logos{grid-template-columns:1fr;gap:20px}
-  .logos ul{justify-content:flex-start}
+@media (min-width:760px){
+  :root{--pad:clamp(32px,5vw,72px);--gap:clamp(88px,11vw,136px)}
+  html{scroll-padding-top:40px}
+  .top{padding-block:14px}
+  .top .only-wide{display:block}
+  .top nav ul{gap:14px}
+  .top nav a{font-size:14px;color:var(--ivory)}
+  .top nav .btn{padding:0 20px;margin-left:8px}
+  .hero-photo{top:150px;width:600px}
+  .hero h1{font-size:104px}
+  .lede{font-size:30px}
+  .hero-copy{padding-block:24px 36px}
+  .cta .btn-solid{flex:none;padding:0 28px}
+  .stats{padding-block:24px 28px;grid-template-columns:repeat(3,max-content);gap:clamp(40px,7vw,88px);justify-content:start}
+  .stats dt{font-size:40px}
+  .stats dd{font-size:13.5px}
+  .sec-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
+  .sec-head{position:sticky;top:40px}
+  .bring li{grid-template-columns:44px minmax(0,1fr);padding:22px 0}
+  .bring h3{font-size:19px}
+  .bring p{font-size:16px}
+  .bring .n{font-size:20px}
+  .quote blockquote{padding-block:56px;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:end}
+  .timeline li{grid-template-columns:96px minmax(0,1fr);padding:20px 0}
+  .timeline h3{font-size:18px}
+  .timeline p{font-size:15.5px}
+  .where img{height:22px}
+  .pod{grid-template-columns:96px minmax(0,1fr);padding:22px;gap:18px}
+  .pod img{width:96px;height:96px}
+  .pod h3{font-size:28px}
+  .press h3{font-size:22px}
+  .press a{padding:20px 0}
+  .contact-in{padding-block:clamp(72px,9vw,120px) 64px;gap:24px}
+  .dock{display:none}
+  .has-dock{padding-bottom:0}
 }
-@media (max-width:760px){
-  :root{--section-gap:84px}
-  .site-header .wrap{height:64px}
-  .nav-links a{padding:8px 9px;font-size:13.5px}
-  .nav .btn{display:none}
-  .hero{grid-template-columns:1fr;gap:36px;padding-top:16px;padding-bottom:64px}
-  .portrait{max-width:300px;order:-1;aspect-ratio:1;border-radius:50%;width:120px;box-shadow:0 0 0 1px var(--line-2),0 0 60px -10px color-mix(in oklch,var(--accent) 45%,transparent)}
-  .portrait::after{display:none}
-  .about,.record,.voice-grid{grid-template-columns:1fr;gap:36px}
-  .record .section-head{position:static}
-  .cards{grid-template-columns:1fr}
-  .stats{grid-template-columns:1fr;gap:34px}
-  .stat{padding-inline:0}
-  .stat+.stat{background:none;padding-top:30px;border-top:1px solid color-mix(in oklch,var(--text) 18%,transparent)}
-  .logos img{height:24px}
-  .logos .sm img{height:20px}
-  .timeline li{grid-template-columns:1fr;gap:4px;padding:20px 0 20px 28px}
-  .timeline li::before{top:27px}
-  .press a{grid-template-columns:1fr auto;gap:4px 14px;padding:20px 0}
-  .press .yr{grid-column:1/-1}
-  .pod{grid-template-columns:120px minmax(0,1fr);align-items:center}
-  .pod .btns{grid-column:1/-1}
-}
-@media (max-width:420px){
-  .brand-name{display:none}
-  .pod{grid-template-columns:1fr}
-  .pod figure{max-width:140px}
+@media (min-width:1000px){
+  .hero-main{min-height:max(calc(100svh - 124px),600px)}
+  .hero-photo{left:auto;right:max(0px,calc((100vw - 1500px)/2));top:0;transform:none;height:100%;width:auto;max-width:none}
+  .hero-main::after{height:22%;background:linear-gradient(to top,var(--ink),rgba(14,14,17,0))}
+  .hero-copy{justify-content:center;gap:28px;padding-block:32px 40px;max-width:min(680px,56vw)}
+  .hero-name{gap:22px}
+  .hero h1{font-size:clamp(100px,10.6vw,156px);line-height:.9;letter-spacing:-.04em}
+  .hero-bottom{gap:26px}
+  .lede{font-size:clamp(26px,2.4vw,34px)}
+  .marks img{height:25px}
+  .marks{gap:26px;order:3}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition:none !important;animation:none !important}
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none !important}
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-header" id="top">
-  <div class="wrap">
-    <a href="#top" class="brand" aria-label="Zach Best, back to top"><span class="brand-mark" aria-hidden="true">ZB</span><span class="brand-name">Zach Best</span></a>
-    <nav class="nav" aria-label="Primary">
-      <ul class="nav-links">
-        <li><a href="#board">Board</a></li>
-        <li><a href="#record">Record</a></li>
-        <li><a href="#press">Press</a></li>
-      </ul>
-      <a href="#contact" class="btn btn-outline">Get in touch</a>
-    </nav>
-  </div>
-</header>
-
 <main id="main">
-  <div class="hero-glow" aria-hidden="true"></div>
-
-  <section class="wrap hero" aria-labelledby="name">
-    <div class="hero-copy">
-      <p class="eyebrow rv">Founder · Operator · Executive</p>
-      <h1 id="name" class="rv"><span>Zach</span><span>Best</span></h1>
-      <p class="lede rv">Co-founded FanSided with his brother. Runs communities at Sports Illustrated and FanSided.</p>
-      <ul class="hero-roles rv" aria-label="Current roles">
-        <li>EVP, Communities at Sports Illustrated</li>
-        <li>Co-founder, FanSided</li>
-      </ul>
-      <div class="hero-ctas rv">
-        <a href="#board" class="btn btn-primary">Board &amp; advisory</a>
-        <a href="#record" class="btn btn-ghost">Track record <span aria-hidden="true">↓</span></a>
-      </div>
-    </div>
-    <figure class="portrait rv">
-      <picture>
-        <source type="image/webp" srcset="headshot-480.webp 480w, headshot.webp 800w" sizes="(max-width: 760px) 120px, 380px">
-        <img src="headshot.jpg" srcset="headshot-480.jpg 480w, headshot.jpg 800w" sizes="(max-width: 760px) 120px, 380px" width="800" height="1000" alt="Portrait of Zach Best" fetchpriority="high" decoding="async">
-      </picture>
-    </figure>
-  </section>
-
-  <section class="band" aria-label="At a glance">
-    <div class="wrap">
-      <dl class="stats">
-        <div class="stat rv">
-          <dt>Years leading</dt>
-          <dd class="num" style="margin:0">19</dd>
-          <dd class="desc" style="margin:0">Co-founded FanSided with his brother in 2007 and still leads it</dd>
-        </div>
-        <div class="stat rv">
-          <dt>Network</dt>
-          <dd class="num" style="margin:0">300+</dd>
-          <dd class="desc" style="margin:0">Localized fan brands built across the FanSided network</dd>
-        </div>
-        <div class="stat rv">
-          <dt>Acquisitions</dt>
-          <dd class="num" style="margin:0">3</dd>
-          <dd class="desc" style="margin:0">Led FanSided through Time Inc., Meredith and Minute</dd>
-        </div>
-      </dl>
-      <div class="logos">
-        <h2>Where the work happened</h2>
+<section class="hero" aria-labelledby="name">
+  <div class="hero-main wrap">
+    <picture>
+      <source type="image/webp" srcset="portrait-640.webp 640w, portrait.webp 1100w" sizes="(max-width: 759px) 118vw, 60vw">
+      <img class="hero-photo" src="portrait.jpg" srcset="portrait-640.jpg 640w, portrait.jpg 1100w" sizes="(max-width: 759px) 118vw, 60vw" width="1100" height="1296" alt="Portrait of Zach Best" fetchpriority="high" decoding="async">
+    </picture>
+    <header class="top">
+      <a class="site label" href="/">zacharybest.com</a>
+      <nav aria-label="Primary">
         <ul>
-          <li class="rv"><img src="logo-si.png" width="250" height="64" alt="Sports Illustrated" loading="lazy" decoding="async"></li>
-          <li class="rv"><img src="logo-fansided.png" width="262" height="64" alt="FanSided" loading="lazy" decoding="async"></li>
-          <li class="rv sm"><img src="logo-minute.png" width="284" height="64" alt="Minute Media" loading="lazy" decoding="async"></li>
-          <li class="rv sm"><img src="logo-timeinc.png" width="315" height="64" alt="Time Inc." loading="lazy" decoding="async"></li>
+          <li><a href="#board">Board</a></li>
+          <li><a href="#record">Record</a></li>
+          <li><a href="#press">Press</a></li>
+          <li class="only-wide"><a class="btn btn-sm" href="#contact">Get in touch</a></li>
         </ul>
+      </nav>
+    </header>
+    <div class="hero-copy">
+      <div class="hero-name">
+        <p class="label">Founder · Operator · Executive</p>
+        <h1 id="name">Zach Best</h1>
+      </div>
+      <div class="hero-bottom">
+        <p class="lede">I turned one sports site into <em>300+ fan brands.</em> I still run FanSided, and lead communities at Sports Illustrated.</p>
+        <div class="marks">
+          <img src="logo-fansided.png" width="262" height="64" alt="FanSided">
+          <img src="logo-si.png" width="250" height="64" alt="Sports Illustrated">
+        </div>
+        <div class="cta" id="hero-cta">
+          <a class="btn btn-solid" href="mailto:zach.best@si.com?subject=Hello%20Zach">Start a conversation</a>
+          <a class="btn" href="#board">Why me</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="strip">
+    <dl class="stats wrap" aria-label="At a glance">
+      <div><dt>19</dt><dd>years leading FanSided</dd></div>
+      <div><dt>300+</dt><dd>fan brands built</dd></div>
+      <div><dt>3</dt><dd>ownership changes led through</dd></div>
+    </dl>
+  </div>
+</section>
 
-  <section class="wrap section about" aria-label="About Zach">
-    <blockquote class="rv"><p>The strongest businesses are built around people first.</p></blockquote>
-    <div class="about-body rv">
-      <p>Zach has spent his career building connections between people, communities, audiences, and ideas.</p>
-      <p>His experience spans education, entrepreneurship, media, and development, but the common thread has always been relationships. Whether building a company from the ground up, growing communities around some of the biggest brands in media, or developing new opportunities closer to home, he believes the strongest businesses are built around people first.</p>
+<section id="board" class="sec wrap" aria-labelledby="board-h">
+  <div class="sec-grid">
+    <div class="sec-head">
+      <p class="label">Board &amp; advisory</p>
+      <h2 id="board-h" style="margin-top:12px">Open to board seats, advisory roles, and select investments.</h2>
+      <p class="intro">I've been the founder, the operator and the executive. I bring all three to the table.</p>
     </div>
-  </section>
+    <div>
+      <ol class="rows bring">
+        <li><span class="n" aria-hidden="true">01</span><h3>Built it from zero</h3><p>I started a company with no money and no playbook. I know what founders are weighing because I've weighed it myself.</p></li>
+        <li><span class="n" aria-hidden="true">02</span><h3>Led through three owners</h3><p>Time Inc., Meredith and Minute. I kept the team and the culture together on the other side of each.</p></li>
+        <li><span class="n" aria-hidden="true">03</span><h3>Communities at national scale</h3><p>At Sports Illustrated and FanSided, editorial, product and sales have to pull in the same direction.</p></li>
+        <li><span class="n" aria-hidden="true">04</span><h3>Inclusion as practice</h3><p>Our work with Special Olympics taught me that inclusive teams make better decisions.</p></li>
+      </ol>
+      <p class="fit"><strong>Best fit:</strong> media and publishing, sports and entertainment, digital community and technology, mission-driven organizations, nonprofits and youth development.</p>
+    </div>
+  </div>
+</section>
 
-  <section id="board" class="wrap section board" aria-labelledby="board-h">
-    <div class="section-head rv">
-      <p class="eyebrow">Board service</p>
-      <h2 id="board-h">Open to board service, advisory, and select investments.</h2>
-      <p>The strongest boards pair rigorous governance with operating experience. Zach brings the founder, operator and executive vantage points to the table, and invests selectively in media and community businesses.</p>
-    </div>
-    <div class="bring">
-      <h3 class="rv">What I bring to a board</h3>
-      <div class="cards">
-        <article class="card rv"><span class="idx" aria-hidden="true">01</span><h4>Built it from zero</h4><p>I started a company with no money and no playbook. I know what founders are weighing because I've weighed it myself.</p></article>
-        <article class="card rv"><span class="idx" aria-hidden="true">02</span><h4>Through changes of ownership</h4><p>I've led a company through acquisition and integration, and kept the team and the culture together on the other side.</p></article>
-        <article class="card rv"><span class="idx" aria-hidden="true">03</span><h4>Communities at national scale</h4><p>I run communities at Sports Illustrated and FanSided, where editorial, product and sales have to pull in the same direction.</p></article>
-        <article class="card rv"><span class="idx" aria-hidden="true">04</span><h4>Inclusion as practice</h4><p>Our work with Special Olympics taught me that inclusive teams make better decisions. I bring that to every room I'm in.</p></article>
-      </div>
-    </div>
-    <div class="envs rv">
-      <h3>Environments</h3>
-      <ul class="tags">
-        <li>Media and publishing</li>
-        <li>Sports and entertainment</li>
-        <li>Digital community and technology</li>
-        <li>Mission-driven and inclusion-focused</li>
-        <li>Nonprofits and youth development</li>
+<section class="quote wrap" aria-label="Philosophy">
+  <blockquote>
+    <p>The strongest businesses are built around people first.</p>
+    <p>Seven years as an educator, nineteen leading FanSided. The common thread has always been relationships: between people, communities, audiences and ideas.</p>
+  </blockquote>
+</section>
+
+<section id="record" class="sec wrap" aria-labelledby="record-h">
+  <div class="sec-grid">
+    <div class="sec-head">
+      <p class="label">Track record</p>
+      <h2 id="record-h" style="margin-top:12px">From the classroom to the newsroom.</h2>
+      <ul class="where" aria-label="Where the work happened">
+        <li><img src="logo-si.png" width="250" height="64" alt="Sports Illustrated" loading="lazy"></li>
+        <li><img src="logo-fansided.png" width="262" height="64" alt="FanSided" loading="lazy"></li>
+        <li><img src="logo-minute.png" width="284" height="64" alt="Minute Media" loading="lazy" style="height:17px"></li>
+        <li><img src="logo-timeinc.png" width="315" height="64" alt="Time Inc." loading="lazy" style="height:17px"></li>
       </ul>
     </div>
-  </section>
-
-  <section id="record" class="wrap section record" aria-labelledby="record-h">
-    <div class="section-head rv">
-      <p class="eyebrow">Track record</p>
-      <h2 id="record-h" class="h2-sm">From the classroom to the newsroom.</h2>
-    </div>
-    <ol class="timeline">
-      <li class="rv"><span class="when">Present</span><div><h3>EVP, Communities, Sports Illustrated &amp; FanSided</h3><p>Still leads FanSided, the network he co-founded, alongside the SI ONSI network.</p></div></li>
-      <li class="rv"><span class="when">Prior</span><div><h3>General Manager, Minute</h3><p>Led the FanSided business within Minute.</p></div></li>
-      <li class="rv"><span class="when">2018</span><div><h3>General Manager, Meredith</h3><p>FanSided came to Meredith with its acquisition of Time Inc.</p></div></li>
-      <li class="rv"><span class="when">2015</span><div><h3>FanSided acquired by Time Inc.</h3><p>Stayed on to lead FanSided through integration into a national media organization.</p></div></li>
-      <li class="rv"><span class="when">2007</span><div><h3>Co-founded FanSided</h3><p>With his brother Adam. One sports site became a network of hundreds of localized fan brands.</p></div></li>
-      <li class="rv"><span class="when">Earlier</span><div><h3>Seven years as an educator</h3><p>Where the habits of clear communication and developing people were formed.</p></div></li>
+    <ol class="rows timeline">
+      <li><span class="when">Now</span><h3>EVP, Communities, Sports Illustrated &amp; FanSided</h3><p>I still lead FanSided, alongside SI's ONSI network.</p></li>
+      <li><span class="when">Prior</span><h3>General Manager, Minute</h3><p>Led the FanSided business within Minute.</p></li>
+      <li><span class="when">2018</span><h3>General Manager, Meredith</h3><p>FanSided came to Meredith with its acquisition of Time Inc.</p></li>
+      <li><span class="when">2015</span><h3>FanSided acquired by Time Inc.</h3><p>Stayed on to lead it through integration into a national media company.</p></li>
+      <li><span class="when">2007</span><h3>Co-founded FanSided</h3><p>With my brother Adam. One sports site became hundreds of local fan brands.</p></li>
+      <li><span class="when">Earlier</span><h3>Seven years as an educator</h3><p>Where I learned to communicate clearly and develop people.</p></li>
     </ol>
-  </section>
+  </div>
+</section>
 
-  <section id="press" class="wrap section" aria-labelledby="press-h">
-    <div class="section-head rv">
-      <p class="eyebrow">Podcast &amp; press</p>
-      <h2 id="press-h" class="h2-sm">In his own words.</h2>
+<section id="press" class="sec wrap" aria-labelledby="press-h">
+  <div class="sec-grid">
+    <div class="sec-head">
+      <p class="label">Podcast &amp; press</p>
+      <h2 id="press-h" style="margin-top:12px">In my own words.</h2>
     </div>
-    <div class="voice-grid">
-      <article class="pod rv">
-        <figure>
-          <picture>
-            <source type="image/webp" srcset="podcast.webp">
-            <img src="podcast-480.jpg" width="480" height="480" alt="What's Your Y? podcast artwork" loading="lazy" decoding="async">
-          </picture>
-        </figure>
-        <div class="pod-body">
-          <span class="meta">Host · Why We Play Podcasts</span>
+    <div>
+      <article class="pod">
+        <picture>
+          <source type="image/webp" srcset="podcast.webp">
+          <img src="podcast.jpg" width="240" height="240" alt="What's Your Y? podcast artwork" loading="lazy" decoding="async">
+        </picture>
+        <div>
+          <span class="label">Host · Why We Play Podcasts</span>
           <h3>What's Your Y?</h3>
-          <p>Conversations built with Special Olympics athletes and Unified partners. Inclusive storytelling as professional practice, not charity.</p>
         </div>
-        <div class="btns">
-          <a href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener" class="btn btn-primary">Spotify</a>
-          <a href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener" class="btn btn-outline">Apple Podcasts</a>
-          <a href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener" class="btn btn-outline">YouTube</a>
+        <p>Conversations with Special Olympics athletes and Unified partners. Inclusive storytelling as professional practice, not charity.</p>
+        <div class="links">
+          <a class="btn btn-sm" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
+          <a class="btn btn-sm" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple</a>
+          <a class="btn btn-sm" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
         </div>
       </article>
-      <ul class="press">
-        <li class="rv"><a href="https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/" target="_blank" rel="noopener">
-          <span class="when yr">2026</span>
-          <div><span class="src">Sports Business Journal · Interview<span class="badge">New</span></span><h3>FanSided Launches Redesigned App With Emphasis on Personalized Feeds, In-Depth Coverage</h3></div>
+      <ul class="rows press">
+        <li><a href="https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/" target="_blank" rel="noopener">
+          <span class="src">Sports Business Journal · 2026<span class="new">New</span></span>
+          <h3>FanSided Launches Redesigned App With Emphasis on Personalized Feeds, In-Depth Coverage</h3>
           <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li class="rv"><a href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener">
-          <span class="when yr">2025</span>
-          <div><span class="src">The Corporate Couch · Podcast interview</span><h3>From KC Chiefs Fan to Media Mogul</h3></div>
+        <li><a href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener">
+          <span class="src">The Corporate Couch · 2025</span>
+          <h3>From KC Chiefs Fan to Media Mogul</h3>
           <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li class="rv"><a href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener">
-          <span class="when yr">2022</span>
-          <div><span class="src">Hashtag Sports · Byline</span><h3>What Businesses Can Learn From the Inclusion Revolution in Sports</h3></div>
+        <li><a href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener">
+          <span class="src">Hashtag Sports · Byline · 2022</span>
+          <h3>What Businesses Can Learn From the Inclusion Revolution in Sports</h3>
           <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li class="rv"><a href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener">
-          <span class="when yr">2015</span>
-          <div><span class="src">417 Magazine · Q&amp;A</span><h3>Nine Questions with Zach and Adam Best</h3></div>
+        <li><a href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener">
+          <span class="src">417 Magazine · 2015</span>
+          <h3>Nine Questions with Zach and Adam Best</h3>
           <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
       </ul>
     </div>
-  </section>
+  </div>
+</section>
 </main>
 
 <section id="contact" class="contact" aria-labelledby="contact-h">
-  <div class="wrap contact-inner">
-    <h2 id="contact-h" class="rv">Let's talk.</h2>
-    <p class="rv">For board seats, advisory roles, or an investment conversation.</p>
-    <div class="contact-row rv">
-      <a class="email" href="mailto:zach.best@si.com?subject=Hello%20Zach">zach.best@si.com</a>
-      <button type="button" class="btn btn-outline copy" data-copy="zach.best@si.com" hidden>Copy email</button>
-      <a class="btn btn-outline" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me">Connect on LinkedIn</a>
+  <div class="wrap contact-in">
+    <h2 id="contact-h">Let's talk.</h2>
+    <p>For board seats, advisory roles, or an investment conversation.</p>
+    <a class="email" href="mailto:zach.best@si.com?subject=Hello%20Zach">zach.best@si.com</a>
+    <div class="acts">
+      <button type="button" class="btn btn-sm" data-copy="zach.best@si.com" hidden>Copy email</button>
+      <a class="btn btn-sm" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me">LinkedIn</a>
     </div>
   </div>
-  <footer class="site-footer">
-    <div class="wrap fade-rule">
+  <footer class="wrap">
+    <div class="foot">
       <span>© <span id="yr">2026</span> Zach Best</span>
       <ul>
         <li><a href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me">LinkedIn</a></li>
@@ -471,53 +414,43 @@ li:first-child .when{color:var(--accent-soft)}
   </footer>
 </section>
 
+<div class="dock" id="dock" aria-hidden="true">
+  <a class="btn btn-solid" href="mailto:zach.best@si.com?subject=Hello%20Zach" tabindex="-1">Start a conversation</a>
+  <a class="btn" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener" tabindex="-1">LinkedIn</a>
+</div>
+
 <script>
 (function(){
-  var d=document, root=d.documentElement;
+  var d=document;
   var y=d.getElementById('yr'); if(y) y.textContent=new Date().getFullYear();
 
-  // sticky header state
-  var hdr=d.querySelector('.site-header');
-  var onScroll=function(){hdr.classList.toggle('scrolled', window.scrollY>8)};
-  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
-
-  // copy email
   var cp=d.querySelector('[data-copy]');
   if(cp && navigator.clipboard){
     cp.hidden=false;
     cp.addEventListener('click',function(){
       navigator.clipboard.writeText(cp.dataset.copy).then(function(){
-        cp.textContent='Copied'; cp.setAttribute('data-done','');
-        setTimeout(function(){cp.textContent='Copy email'; cp.removeAttribute('data-done')},1800);
+        cp.textContent='Copied';
+        setTimeout(function(){cp.textContent='Copy email'},1800);
       });
     });
   }
 
-  if(!('IntersectionObserver' in window)) return;
-
-  // active nav link
-  var links=[].slice.call(d.querySelectorAll('.nav-links a'));
-  var map={}; links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
-  var navIO=new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting) return;
-      links.forEach(function(l){l.classList.remove('active');l.removeAttribute('aria-current')});
-      var a=map[e.target.id]; if(a){a.classList.add('active'); a.setAttribute('aria-current','true');}
-    });
-  },{rootMargin:'-45% 0px -50% 0px'});
-  d.querySelectorAll('main > section, #contact').forEach(function(s){navIO.observe(s)});
-
-  // reveal on scroll (content stays visible without JS or with reduced motion)
-  if(!root.classList.contains('js')) return;
-  var els=[].slice.call(d.querySelectorAll('.rv'));
+  // phone dock: a contact button that appears once the hero buttons scroll away
+  var dock=d.getElementById('dock'), cta=d.getElementById('hero-cta'), contact=d.getElementById('contact');
+  if(!dock || !('IntersectionObserver' in window)) return;
+  d.body.classList.add('has-dock');
+  var seen={cta:true,contact:false};
+  var update=function(){
+    var show=!seen.cta && !seen.contact;
+    dock.classList.toggle('show',show);
+    dock.setAttribute('aria-hidden',show?'false':'true');
+    [].forEach.call(dock.querySelectorAll('a'),function(a){a.tabIndex=show?0:-1});
+  };
   var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{rootMargin:'0px 0px -6% 0px',threshold:0.06});
-  els.forEach(function(el){
-    var sib=[].slice.call(el.parentElement.children).filter(function(c){return c.classList.contains('rv')});
-    el.style.transitionDelay=Math.min(sib.indexOf(el)*70,350)+'ms';
-    io.observe(el);
+    es.forEach(function(e){ seen[e.target===cta?'cta':'contact']=e.isIntersecting; });
+    update();
   });
+  io.observe(cta); io.observe(contact);
 })();
 </script>
 </body>

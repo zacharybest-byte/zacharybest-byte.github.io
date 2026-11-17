@@ -131,58 +131,46 @@ a{color:inherit;text-decoration:none}
 
 /* sections */
 .sec{padding-top:var(--gap)}
+.sec h2:not(.label){margin-top:10px;font-family:var(--serif);font-weight:400;font-size:clamp(26px,6.8vw,40px);line-height:1.1;letter-spacing:-.02em;color:var(--paper);text-wrap:balance}
+h2.label{margin-bottom:14px}
 .sec-grid{display:grid;gap:22px}
-.sec h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7.4vw,44px);line-height:1.08;letter-spacing:-.022em;color:var(--paper);text-wrap:balance}
-.sec .intro{margin-top:14px;font-size:16px;line-height:1.6;color:var(--muted);max-width:56ch;text-wrap:pretty}
-.rows{border-top:1px solid var(--line-2)}
-.rows>li{border-bottom:1px solid var(--line)}
 
-/* board */
-.bring li{display:grid;grid-template-columns:34px minmax(0,1fr);gap:4px 10px;padding:16px 0}
-.bring .n{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--accent);line-height:1.35}
-.bring h3{font:600 16.5px/1.3 var(--sans);letter-spacing:-.005em;color:var(--paper)}
-.bring p{grid-column:2;font-size:15px;line-height:1.5;color:var(--muted);text-wrap:pretty}
-.fit{margin-top:18px;font-size:14.5px;line-height:1.55;color:var(--muted)}
-.fit strong{font-weight:600;color:var(--ivory)}
+/* board pillars: 2x2 on every screen */
+.pillars{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--line-2)}
+.pillars li{display:flex;flex-direction:column;gap:4px;padding:16px 14px 16px 0;border-bottom:1px solid var(--line)}
+.pillars li:nth-child(even){padding:16px 0 16px 14px;border-left:1px solid var(--line)}
+.pillars .n{font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.2;color:var(--accent)}
+.pillars h3{font:600 15px/1.25 var(--sans);color:var(--paper)}
+.pillars p{font-size:13.5px;line-height:1.4;color:var(--muted)}
 
-/* quote */
-.quote{padding-block:var(--gap) 0}
-.quote blockquote{padding-block:34px;border-block:1px solid var(--line-2);display:grid;gap:16px}
-.quote blockquote p:first-child{font-family:var(--serif);font-style:italic;font-size:clamp(28px,7.6vw,52px);line-height:1.08;letter-spacing:-.02em;color:var(--paper);text-wrap:balance}
-.quote blockquote p+p{font-size:15.5px;line-height:1.55;color:var(--muted);max-width:52ch}
-
-/* record */
-.where{display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;margin-top:18px}
-.where img{height:19px;width:auto;opacity:.75}
-.timeline li{display:grid;grid-template-columns:70px minmax(0,1fr);gap:2px 10px;padding:14px 0;align-items:baseline}
-.timeline .when{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-variant-numeric:tabular-nums}
-.timeline li:first-child .when{color:var(--accent)}
-.timeline h3{font:600 16px/1.3 var(--sans);color:var(--paper)}
-.timeline p{grid-column:2;font-size:14.5px;line-height:1.5;color:var(--muted);text-wrap:pretty}
-
-/* press */
-.pod{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;padding:16px;border:1px solid var(--line-2);border-radius:14px;background:var(--ink-2)}
-.pod img{width:76px;height:76px;border-radius:8px}
-.pod h3{font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.1;letter-spacing:-.015em;color:var(--paper);margin-top:4px}
-.pod p{grid-column:1/-1;font-size:14.5px;line-height:1.5;color:var(--muted)}
-.pod .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
-.press{margin-top:18px}
-.press a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;padding:15px 0;align-items:center;min-height:44px}
-.press .src{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
-.press h3{grid-column:1;font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.22;letter-spacing:-.008em;color:var(--paper);text-wrap:pretty;transition:color .2s}
-.press .arrow{grid-row:1/3;grid-column:2;color:var(--accent);font-size:17px;transition:transform .2s}
+/* record + press */
+.duo{display:grid;gap:var(--gap)}
+.list{border-top:1px solid var(--line-2)}
+.list>li{border-bottom:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:64px minmax(0,1fr);gap:10px;padding:12px 0;align-items:baseline}
+.tl .when{font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-variant-numeric:tabular-nums}
+.tl li:first-child .when{color:var(--accent)}
+.tl .what{font-size:15px;line-height:1.35;font-weight:500;color:var(--paper)}
+.pod{display:grid;grid-template-columns:64px minmax(0,1fr);gap:0 14px;align-items:center;padding:14px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line)}
+.pod img{width:64px;height:64px;border-radius:8px}
+.pod h3{margin-top:3px;font-family:var(--serif);font-weight:500;font-size:21px;line-height:1.1;letter-spacing:-.01em;color:var(--paper)}
+.pod .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.press a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 14px;padding:13px 0;align-items:center;min-height:44px}
+.press .src{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.press h3{grid-column:1;font-family:var(--serif);font-weight:400;font-size:17px;line-height:1.25;color:var(--paper);text-wrap:pretty;transition:color .2s}
+.press .arrow{grid-row:1/3;grid-column:2;color:var(--accent);transition:transform .2s}
 .press a:hover h3{color:var(--accent)}
 .press a:hover .arrow{transform:translate(2px,-2px)}
 .new{margin-left:8px;padding:2px 7px;border-radius:999px;background:var(--accent);color:var(--ink);font-size:10px;font-weight:600;letter-spacing:.08em}
 
 /* contact */
 .contact{margin-top:var(--gap);border-top:1px solid var(--line-2)}
-.contact-in{padding-block:52px 40px;display:grid;gap:18px}
-.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(56px,16vw,120px);line-height:.92;letter-spacing:-.035em;color:var(--paper)}
-.contact p{font-size:17px;line-height:1.5;color:var(--muted);max-width:40ch}
+.contact-in{padding-block:44px 32px;display:grid;gap:16px}
+.q{font-family:var(--serif);font-style:italic;font-size:clamp(20px,5.4vw,26px);line-height:1.2;color:var(--muted);max-width:26ch;text-wrap:balance}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(52px,15vw,112px);line-height:.92;letter-spacing:-.035em;color:var(--paper)}
 .email{justify-self:start;font-family:var(--serif);font-size:clamp(24px,6.6vw,34px);letter-spacing:-.012em;color:var(--accent);border-bottom:1px solid var(--edge);padding:6px 0}
 .email:hover{border-color:var(--accent)}
-.contact .acts{display:flex;flex-wrap:wrap;gap:10px;padding-top:6px}
+.contact .acts{display:flex;flex-wrap:wrap;gap:10px}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:8px 20px;border-top:1px solid var(--line);font-size:13px;color:var(--dim)}
 .foot ul{display:flex;gap:2px}
 .foot a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px}
@@ -194,7 +182,6 @@ a{color:inherit;text-decoration:none}
 .dock.show{transform:none;visibility:visible}
 .dock .btn{min-height:48px}
 .dock .btn-solid{flex:1}
-.has-dock{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
 
 @media (min-width:760px){
   :root{--pad:clamp(32px,5vw,72px);--gap:clamp(88px,11vw,136px)}
@@ -213,30 +200,30 @@ a{color:inherit;text-decoration:none}
   .stats dt{font-size:40px}
   .stats dd{font-size:13.5px}
   .sec-grid{grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:start}
-  .sec-head{position:sticky;top:40px}
-  .bring li{grid-template-columns:44px minmax(0,1fr);padding:22px 0}
-  .bring h3{font-size:19px}
-  .bring p{font-size:16px}
-  .bring .n{font-size:20px}
-  .quote blockquote{padding-block:56px;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,6vw,96px);align-items:end}
-  .timeline li{grid-template-columns:96px minmax(0,1fr);padding:20px 0}
-  .timeline h3{font-size:18px}
-  .timeline p{font-size:15.5px}
-  .where img{height:22px}
-  .pod{grid-template-columns:96px minmax(0,1fr);padding:22px;gap:18px}
-  .pod img{width:96px;height:96px}
-  .pod h3{font-size:28px}
-  .press h3{font-size:22px}
-  .press a{padding:20px 0}
-  .contact-in{padding-block:clamp(72px,9vw,120px) 64px;gap:24px}
+  .pillars li{padding:24px 24px 24px 0}
+  .pillars li:nth-child(even){padding:24px 0 24px 24px}
+  .pillars h3{font-size:17px}
+  .pillars p{font-size:15px}
+  .pillars .n{font-size:17px}
+  .duo{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,6vw,96px);align-items:start}
+  .tl li{grid-template-columns:80px minmax(0,1fr);padding:15px 0}
+  .tl .what{font-size:16px}
+  .pod{grid-template-columns:72px minmax(0,1fr);padding:16px 0}
+  .pod img{width:72px;height:72px}
+  .press a{padding:15px 0}
+  .press h3{font-size:18px}
+  .contact-in{grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:48px;padding-block:clamp(64px,8vw,104px) 48px}
+  .contact-in>*{grid-column:1}
+  .contact .acts{grid-column:2;grid-row:3;align-self:end}
   .dock{display:none}
-  .has-dock{padding-bottom:0}
 }
 @media (min-width:1000px){
-  .hero-main{min-height:max(calc(100svh - 124px),600px)}
-  .hero-photo{left:auto;right:max(0px,calc((100vw - 1500px)/2));top:0;transform:none;height:100%;width:auto;max-width:none}
-  .hero-main::after{height:22%;background:linear-gradient(to top,var(--ink),rgba(14,14,17,0))}
-  .hero-copy{justify-content:center;gap:28px;padding-block:32px 40px;max-width:min(680px,56vw)}
+  .hero-main{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);grid-template-rows:auto 1fr;column-gap:clamp(32px,4vw,72px);min-height:clamp(560px,calc(100svh - 124px),720px)}
+  .hero-main::after{display:none}
+  .top{grid-column:1/-1;grid-row:1}
+  .hero-main>picture{display:block;grid-column:2;grid-row:2;align-self:center;justify-self:end;width:100%;max-width:600px}
+  .hero-photo{position:static;transform:none;width:100%;height:auto;max-width:100%}
+  .hero-copy{grid-column:1;grid-row:2;justify-content:center;gap:28px;padding-block:32px 40px;max-width:none}
   .hero-name{gap:22px}
   .hero h1{font-size:clamp(100px,10.6vw,156px);line-height:.9;letter-spacing:-.04em}
   .hero-bottom{gap:26px}
@@ -293,110 +280,82 @@ a{color:inherit;text-decoration:none}
     <dl class="stats wrap" aria-label="At a glance">
       <div><dt>19</dt><dd>years leading FanSided</dd></div>
       <div><dt>300+</dt><dd>fan brands built</dd></div>
-      <div><dt>3</dt><dd>ownership changes led through</dd></div>
+      <div><dt>3</dt><dd>acquisitions led through</dd></div>
     </dl>
   </div>
 </section>
 
 <section id="board" class="sec wrap" aria-labelledby="board-h">
   <div class="sec-grid">
-    <div class="sec-head">
+    <div>
       <p class="label">Board &amp; advisory</p>
-      <h2 id="board-h" style="margin-top:12px">Open to board seats, advisory roles, and select investments.</h2>
-      <p class="intro">I've been the founder, the operator and the executive. I bring all three to the table.</p>
+      <h2 id="board-h">Open to board seats, advisory roles and select investments.</h2>
     </div>
-    <div>
-      <ol class="rows bring">
-        <li><span class="n" aria-hidden="true">01</span><h3>Built it from zero</h3><p>I started a company with no money and no playbook. I know what founders are weighing because I've weighed it myself.</p></li>
-        <li><span class="n" aria-hidden="true">02</span><h3>Led through three owners</h3><p>Time Inc., Meredith and Minute. I kept the team and the culture together on the other side of each.</p></li>
-        <li><span class="n" aria-hidden="true">03</span><h3>Communities at national scale</h3><p>At Sports Illustrated and FanSided, editorial, product and sales have to pull in the same direction.</p></li>
-        <li><span class="n" aria-hidden="true">04</span><h3>Inclusion as practice</h3><p>Our work with Special Olympics taught me that inclusive teams make better decisions.</p></li>
-      </ol>
-      <p class="fit"><strong>Best fit:</strong> media and publishing, sports and entertainment, digital community and technology, mission-driven organizations, nonprofits and youth development.</p>
-    </div>
+    <ul class="pillars">
+      <li><span class="n" aria-hidden="true">01</span><h3>Built it from zero</h3><p>No money, no playbook.</p></li>
+      <li><span class="n" aria-hidden="true">02</span><h3>Led through three owners</h3><p>Time Inc., Meredith, Minute.</p></li>
+      <li><span class="n" aria-hidden="true">03</span><h3>Communities at scale</h3><p>Sports Illustrated and FanSided.</p></li>
+      <li><span class="n" aria-hidden="true">04</span><h3>Inclusion as practice</h3><p>Through our Special Olympics work.</p></li>
+    </ul>
   </div>
 </section>
 
-<section class="quote wrap" aria-label="Philosophy">
-  <blockquote>
-    <p>The strongest businesses are built around people first.</p>
-    <p>Seven years as an educator, nineteen leading FanSided. The common thread has always been relationships: between people, communities, audiences and ideas.</p>
-  </blockquote>
-</section>
-
-<section id="record" class="sec wrap" aria-labelledby="record-h">
-  <div class="sec-grid">
-    <div class="sec-head">
-      <p class="label">Track record</p>
-      <h2 id="record-h" style="margin-top:12px">From the classroom to the newsroom.</h2>
-      <ul class="where" aria-label="Where the work happened">
-        <li><img src="logo-si.png" width="250" height="64" alt="Sports Illustrated" loading="lazy"></li>
-        <li><img src="logo-fansided.png" width="262" height="64" alt="FanSided" loading="lazy"></li>
-        <li><img src="logo-minute.png" width="284" height="64" alt="Minute Media" loading="lazy" style="height:17px"></li>
-        <li><img src="logo-timeinc.png" width="315" height="64" alt="Time Inc." loading="lazy" style="height:17px"></li>
-      </ul>
-    </div>
-    <ol class="rows timeline">
-      <li><span class="when">Now</span><h3>EVP, Communities, Sports Illustrated &amp; FanSided</h3><p>I still lead FanSided, alongside SI's ONSI network.</p></li>
-      <li><span class="when">Prior</span><h3>General Manager, Minute</h3><p>Led the FanSided business within Minute.</p></li>
-      <li><span class="when">2018</span><h3>General Manager, Meredith</h3><p>FanSided came to Meredith with its acquisition of Time Inc.</p></li>
-      <li><span class="when">2015</span><h3>FanSided acquired by Time Inc.</h3><p>Stayed on to lead it through integration into a national media company.</p></li>
-      <li><span class="when">2007</span><h3>Co-founded FanSided</h3><p>With my brother Adam. One sports site became hundreds of local fan brands.</p></li>
-      <li><span class="when">Earlier</span><h3>Seven years as an educator</h3><p>Where I learned to communicate clearly and develop people.</p></li>
+<div class="duo sec wrap">
+  <section id="record" aria-labelledby="record-h">
+    <h2 id="record-h" class="label">Track record</h2>
+    <ol class="list tl">
+      <li><span class="when">Now</span><span class="what">EVP, Communities, Sports Illustrated &amp; FanSided</span></li>
+      <li><span class="when">Prior</span><span class="what">General Manager, Minute</span></li>
+      <li><span class="when">2018</span><span class="what">General Manager, Meredith</span></li>
+      <li><span class="when">2015</span><span class="what">FanSided acquired by Time Inc.</span></li>
+      <li><span class="when">2007</span><span class="what">Co-founded FanSided with my brother Adam</span></li>
+      <li><span class="when">Earlier</span><span class="what">Seven years as an educator</span></li>
     </ol>
-  </div>
-</section>
+  </section>
 
-<section id="press" class="sec wrap" aria-labelledby="press-h">
-  <div class="sec-grid">
-    <div class="sec-head">
-      <p class="label">Podcast &amp; press</p>
-      <h2 id="press-h" style="margin-top:12px">In my own words.</h2>
-    </div>
-    <div>
-      <article class="pod">
-        <picture>
-          <source type="image/webp" srcset="podcast.webp">
-          <img src="podcast.jpg" width="240" height="240" alt="What's Your Y? podcast artwork" loading="lazy" decoding="async">
-        </picture>
-        <div>
-          <span class="label">Host · Why We Play Podcasts</span>
-          <h3>What's Your Y?</h3>
-        </div>
-        <p>Conversations with Special Olympics athletes and Unified partners. Inclusive storytelling as professional practice, not charity.</p>
-        <div class="links">
-          <a class="btn btn-sm" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
-          <a class="btn btn-sm" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple</a>
-          <a class="btn btn-sm" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
-        </div>
-      </article>
-      <ul class="rows press">
-        <li><a href="https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/" target="_blank" rel="noopener">
-          <span class="src">Sports Business Journal · 2026<span class="new">New</span></span>
-          <h3>FanSided Launches Redesigned App With Emphasis on Personalized Feeds, In-Depth Coverage</h3>
-          <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li><a href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener">
-          <span class="src">The Corporate Couch · 2025</span>
-          <h3>From KC Chiefs Fan to Media Mogul</h3>
-          <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li><a href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener">
-          <span class="src">Hashtag Sports · Byline · 2022</span>
-          <h3>What Businesses Can Learn From the Inclusion Revolution in Sports</h3>
-          <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-        <li><a href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener">
-          <span class="src">417 Magazine · 2015</span>
-          <h3>Nine Questions with Zach and Adam Best</h3>
-          <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
-      </ul>
-    </div>
-  </div>
-</section>
+  <section id="press" aria-labelledby="press-h">
+    <h2 id="press-h" class="label">Podcast &amp; press</h2>
+    <article class="pod">
+      <picture>
+        <source type="image/webp" srcset="podcast.webp">
+        <img src="podcast.jpg" width="240" height="240" alt="What's Your Y? podcast artwork" loading="lazy" decoding="async">
+      </picture>
+      <div>
+        <span class="label">Host · Why We Play Podcasts</span>
+        <h3>What's Your Y?</h3>
+      </div>
+      <div class="links">
+        <a class="btn btn-sm" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
+        <a class="btn btn-sm" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple</a>
+        <a class="btn btn-sm" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </article>
+    <ul class="list press" style="border-top:0">
+      <li><a href="https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/" target="_blank" rel="noopener">
+        <span class="src">Sports Business Journal · 2026<span class="new">New</span></span>
+        <h3>FanSided Launches Redesigned App With Emphasis on Personalized Feeds, In-Depth Coverage</h3>
+        <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+      <li><a href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener">
+        <span class="src">The Corporate Couch · 2025</span>
+        <h3>From KC Chiefs Fan to Media Mogul</h3>
+        <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+      <li><a href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener">
+        <span class="src">Hashtag Sports · 2022</span>
+        <h3>What Businesses Can Learn From the Inclusion Revolution in Sports</h3>
+        <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+      <li><a href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener">
+        <span class="src">417 Magazine · 2015</span>
+        <h3>Nine Questions with Zach and Adam Best</h3>
+        <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a></li>
+    </ul>
+  </section>
+</div>
 </main>
 
 <section id="contact" class="contact" aria-labelledby="contact-h">
   <div class="wrap contact-in">
+    <p class="q">“The strongest businesses are built around people first.”</p>
     <h2 id="contact-h">Let's talk.</h2>
-    <p>For board seats, advisory roles, or an investment conversation.</p>
     <a class="email" href="mailto:zach.best@si.com?subject=Hello%20Zach">zach.best@si.com</a>
     <div class="acts">
       <button type="button" class="btn btn-sm" data-copy="zach.best@si.com" hidden>Copy email</button>
@@ -438,7 +397,6 @@ a{color:inherit;text-decoration:none}
   // phone dock: a contact button that appears once the hero buttons scroll away
   var dock=d.getElementById('dock'), cta=d.getElementById('hero-cta'), contact=d.getElementById('contact');
   if(!dock || !('IntersectionObserver' in window)) return;
-  d.body.classList.add('has-dock');
   var seen={cta:true,contact:false};
   var update=function(){
     var show=!seen.cta && !seen.contact;

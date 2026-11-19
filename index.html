@@ -41,7 +41,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" type="image/webp" media="(max-width: 759px)" href="headshot-sm2x.webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" media="(max-width: 759px)" href="headshot-sm.webp" imagesrcset="headshot-sm.webp 1x, headshot-sm2x.webp 2x" fetchpriority="high">
 <link rel="preload" as="image" type="image/webp" media="(min-width: 760px)" imagesrcset="portrait-640.webp 640w, portrait.webp 1100w" imagesizes="40vw" href="portrait.webp" fetchpriority="high">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" media="print" onload="this.media='all'">
@@ -52,7 +52,7 @@
 {"@type":"WebSite","@id":"https://zacharybest.com/#website","url":"https://zacharybest.com/","name":"Zach Best","inLanguage":"en-US","publisher":{"@id":"https://zacharybest.com/#person"}},
 {"@type":"ProfilePage","@id":"https://zacharybest.com/#page","url":"https://zacharybest.com/","name":"Zach Best | Co-founder of FanSided, EVP of Communities at Sports Illustrated","isPartOf":{"@id":"https://zacharybest.com/#website"},"inLanguage":"en-US","dateModified":"2026-11-17","primaryImageOfPage":{"@id":"https://zacharybest.com/#headshot"},"mainEntity":{"@id":"https://zacharybest.com/#person"}},
 {"@type":"ImageObject","@id":"https://zacharybest.com/#headshot","url":"https://zacharybest.com/headshot.jpg","contentUrl":"https://zacharybest.com/headshot.jpg","width":800,"height":1000,"caption":"Zach Best"},
-{"@type":"Person","@id":"https://zacharybest.com/#person","name":"Zach Best","alternateName":"Zachary Best","givenName":"Zach","familyName":"Best","url":"https://zacharybest.com/","image":{"@id":"https://zacharybest.com/#headshot"},"email":"mailto:zach.best@si.com","jobTitle":"EVP, Communities, Sports Illustrated and FanSided","description":"Co-founder of FanSided and EVP of Communities at Sports Illustrated. Co-host of What's Your Y? and executive producer of The Sportscaster.","worksFor":[{"@type":"Organization","name":"Sports Illustrated","url":"https://www.si.com/"},{"@type":"Organization","name":"FanSided","url":"https://fansided.com/"}],"founder":{"@type":"Organization","name":"FanSided","url":"https://fansided.com/","foundingDate":"2007"},"sibling":{"@type":"Person","name":"Adam Best"},"knowsAbout":["Digital media","Audience and community development","Editorial operations","Media mergers and acquisitions","Board governance","Inclusion","Sports media"],"sameAs":["https://www.linkedin.com/in/zacharybest","https://x.com/zacharybest"],
+{"@type":"Person","@id":"https://zacharybest.com/#person","name":"Zach Best","alternateName":"Zachary Best","givenName":"Zach","familyName":"Best","url":"https://zacharybest.com/","image":{"@id":"https://zacharybest.com/#headshot"},"email":"zach.best@si.com","jobTitle":"EVP, Communities, Sports Illustrated and FanSided","description":"Co-founder of FanSided and EVP of Communities at Sports Illustrated. Co-host of What's Your Y? and executive producer of The Sportscaster.","worksFor":[{"@type":"Organization","name":"Sports Illustrated","url":"https://www.si.com/"},{"@type":"Organization","name":"FanSided","url":"https://fansided.com/"}],"founder":{"@type":"Organization","name":"FanSided","url":"https://fansided.com/","foundingDate":"2007"},"sibling":{"@type":"Person","name":"Adam Best"},"knowsAbout":["Digital media","Audience and community development","Editorial operations","Media mergers and acquisitions","Board governance","Inclusion","Sports media"],"sameAs":["https://www.linkedin.com/in/zacharybest","https://x.com/zacharybest"],
 "subjectOf":[
 {"@type":"NewsArticle","headline":"FanSided launches redesigned app with emphasis on personalized feeds, in-depth coverage","url":"https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/","datePublished":"2026-11-16","publisher":{"@type":"Organization","name":"Sports Business Journal"}},
 {"@type":"Movie","name":"The Sportscaster","url":"https://thesportscasterfilm.com/","dateCreated":"2026","duration":"PT55M","director":{"@type":"Person","name":"Hunter Armor"},"producer":{"@id":"https://zacharybest.com/#person"},"productionCompany":{"@type":"Organization","name":"FanSided"}},
@@ -122,8 +122,6 @@ a{color:inherit;text-decoration:none}
 .hero-name{display:flex;flex-direction:column;gap:6px}
 .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(68px,20vw,84px);line-height:.95;letter-spacing:-.035em;white-space:nowrap;color:var(--paper-text)}
 .hero-bottom{display:flex;flex-direction:column;gap:18px}
-.lede{font-family:var(--serif);font-size:clamp(21px,6vw,25px);line-height:1.2;letter-spacing:-.01em;color:var(--paper-text);text-wrap:balance;max-width:22em}
-.lede em{color:var(--accent)}
 .marks{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px}
 .marks img{width:auto;opacity:.92}
 .marks{justify-content:space-between}
@@ -217,7 +215,7 @@ a{color:inherit;text-decoration:none}
 .worked{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;padding-bottom:14px}
 .worked img{width:auto;opacity:.8}
 .worked .si{height:15px}.worked .fs{height:11px}.worked .mm{height:12px}.worked .ti{height:12px}.worked .me{height:14px}
-.tl{display:flex;flex-direction:column-reverse;border-top:1px solid var(--line-2)}
+.tl{display:flex;flex-direction:column;border-top:1px solid var(--line-2)}
 .tl li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .tl li:first-child{border-bottom:1px solid var(--line)}
 .tl .when{font-size:11.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-variant-numeric:tabular-nums}
@@ -264,7 +262,6 @@ a{color:inherit;text-decoration:none}
   .top nav a{font-size:14px;color:var(--ivory);padding:0 12px}
   .top nav .soc a{padding:0 8px}
   .top nav .btn{margin-left:10px;padding:0 20px}
-  .lede{font-size:30px}
   .hero-copy{padding-block:24px 36px}
   .cta .btn-solid{flex:none;padding:0 28px}
   .wide-t{display:inline}
@@ -339,7 +336,6 @@ a{color:inherit;text-decoration:none}
   .hero-name{gap:22px}
   .hero h1{font-size:clamp(72px,8.4vw,124px);line-height:.9;letter-spacing:-.04em}
   .hero-bottom{gap:26px}
-  .lede{font-size:clamp(26px,2.3vw,33px);max-width:20em}
   .marks{order:3;gap:30px}
 }
 @media (min-width:760px) and (max-width:999px){
@@ -468,12 +464,12 @@ a{color:inherit;text-decoration:none}
   <div class="wrap">
     <div class="pod-head">
       <picture>
-        <source type="image/webp" srcset="podcast-200.webp 200w, podcast.webp 520w" sizes="(max-width: 759px) 96px, 240px">
-        <img class="pod-art" src="podcast.jpg" srcset="podcast-200.jpg 200w, podcast.jpg 520w" sizes="(max-width: 759px) 96px, 240px" width="520" height="520" alt="What's Your Y? podcast artwork" loading="lazy" decoding="async">
+        <source type="image/webp" srcset="podcast-200.webp 200w, podcast.webp 520w" sizes="(max-width: 759px) 72px, 112px">
+        <img class="pod-art" src="podcast.jpg" srcset="podcast-200.jpg 200w, podcast.jpg 520w" sizes="(max-width: 759px) 72px, 112px" width="520" height="520" alt="" loading="lazy" decoding="async">
       </picture>
       <div>
         <p class="kicker">Podcast · Co-host</p>
-        <h2 id="pod-h">What's Your Y?</h2>
+        <h2 id="pod-h">What’s Your Y?</h2>
       </div>
       <p class="pod-desc">How sports help people overcome adversity and find purpose. With co-host Wyatt Spalding.</p>
       <div class="listen">
@@ -506,14 +502,14 @@ a{color:inherit;text-decoration:none}
     <a class="trailer" href="https://vimeo.com/1229213321/27006d0253" target="_blank" rel="noopener" aria-label="Watch The Sportscaster trailer (opens in a new tab)">
       <picture>
         <source type="image/webp" srcset="sportscaster-720.webp 720w, sportscaster.webp 1280w" sizes="(max-width: 759px) 100vw, 55vw">
-        <img src="sportscaster.jpg" srcset="sportscaster-720.jpg 720w, sportscaster.jpg 1280w" sizes="(max-width: 759px) 100vw, 55vw" width="1280" height="720" alt="The Sportscaster: Malcom Harris-Gowdie holding a FanSided microphone" loading="lazy" decoding="async">
+        <img src="sportscaster.jpg" srcset="sportscaster-720.jpg 720w, sportscaster.jpg 1280w" sizes="(max-width: 759px) 100vw, 55vw" width="1280" height="720" alt="" loading="lazy" decoding="async">
       </picture>
       <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z"/></svg></span>
     </a>
     <div class="film-copy">
-      <p class="kicker" aria-hidden="true">Executive producer · In the film</p>
+      <p class="kicker">Executive producer · In the film</p>
       <h2 id="film-h">The Sportscaster</h2>
-      <p class="logline">Special Olympics athlete Malcom Harris-Gowdie has covered four Super Bowls. He's still waiting for the job.</p>
+      <p class="logline">Special Olympics athlete Malcom Harris-Gowdie has covered four Super Bowls. He’s still waiting for the job.</p>
             <p class="facts">Documentary · 55 min · 2026</p>
       <p class="cast">With George Kittle, Christian McCaffrey, Bijan Robinson and Eli Manning.</p>
       <div class="acts">
@@ -533,7 +529,7 @@ a{color:inherit;text-decoration:none}
     </div>
     <ul class="pillars">
       <li><h3>Built it from zero</h3><p>No money, no playbook.</p></li>
-      <li><h3>Led through three owners</h3><p>Time Inc., Meredith, Minute.</p></li>
+      <li><h3>Led through three owners</h3><p>Time Inc., Meredith, Minute Media.</p></li>
       <li><h3>Communities at scale</h3><p>Sports Illustrated and FanSided.</p></li>
       <li><h3>Inclusion as practice</h3><p>Through our Special Olympics work.</p></li>
     </ul>
@@ -550,12 +546,12 @@ a{color:inherit;text-decoration:none}
     <li><img class="me" src="logo-meredith.png" width="276" height="64" alt="Meredith" loading="lazy"></li>
   </ul>
   <ol class="tl">
-    <li><span class="when">Earlier</span><span class="dot" aria-hidden="true"></span><span class="what">Seven years as an educator</span></li>
-    <li><span class="when">2007</span><span class="dot" aria-hidden="true"></span><span class="what">Co-founded FanSided with my brother Adam</span></li>
-    <li><span class="when">2015</span><span class="dot" aria-hidden="true"></span><span class="what">FanSided acquired by Time Inc.</span></li>
+    <li class="now"><span class="when">Now</span><span class="dot" aria-hidden="true"></span><span class="what">EVP, Communities, Sports Illustrated and FanSided</span></li>
+    <li><span class="when">Prior</span><span class="dot" aria-hidden="true"></span><span class="what">General Manager, Minute Media</span></li>
     <li><span class="when">2018</span><span class="dot" aria-hidden="true"></span><span class="what">General Manager, Meredith</span></li>
-    <li><span class="when">Prior</span><span class="dot" aria-hidden="true"></span><span class="what">General Manager, Minute</span></li>
-    <li class="now"><span class="when">Now</span><span class="dot" aria-hidden="true"></span><span class="what">EVP, Communities, Sports Illustrated &amp; FanSided</span></li>
+    <li><span class="when">2015</span><span class="dot" aria-hidden="true"></span><span class="what">FanSided acquired by Time Inc.</span></li>
+    <li><span class="when">2007</span><span class="dot" aria-hidden="true"></span><span class="what">Co-founded FanSided with my brother Adam</span></li>
+    <li><span class="when">Earlier</span><span class="dot" aria-hidden="true"></span><span class="what">Seven years as an educator</span></li>
   </ol>
 </section>
 </div>
@@ -564,7 +560,7 @@ a{color:inherit;text-decoration:none}
 <section id="contact" class="contact" aria-labelledby="contact-h">
   <div class="wrap contact-in">
     <p class="q">“The strongest businesses are built around people first.”</p>
-    <h2 id="contact-h">Let's talk.</h2>
+    <h2 id="contact-h">Let’s talk.</h2>
     <a class="email" href="mailto:zach.best@si.com?subject=Hello%20Zach">zach.best@si.com</a>
     <div class="acts">
       <a class="btn btn-sm" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg>LinkedIn</a>
@@ -583,7 +579,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="dock" id="dock" aria-hidden="true">
   <a class="btn btn-solid" href="mailto:zach.best@si.com?subject=Hello%20Zach" tabindex="-1">Start a conversation</a>
-  <a class="btn" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener" tabindex="-1" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg></a>
+  <a class="btn" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener" tabindex="-1" aria-label="Zach Best on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg></a>
 </div>
 
 <script>
@@ -592,15 +588,6 @@ a{color:inherit;text-decoration:none}
   var now=new Date().getFullYear();
   var y=d.getElementById('yr'); if(y) y.textContent=now;
   var yrs=d.querySelector('[data-since]'); if(yrs) yrs.textContent=now-(+yrs.dataset.since);
-  var cp=d.querySelector('[data-copy]');
-  if(cp && navigator.clipboard){
-    cp.hidden=false;
-    cp.addEventListener('click',function(){
-      navigator.clipboard.writeText(cp.dataset.copy).then(function(){
-        cp.textContent='Copied'; setTimeout(function(){cp.textContent='Copy email'},1800);
-      });
-    });
-  }
   var dock=d.getElementById('dock'), cta=d.getElementById('hero-cta'), contact=d.getElementById('contact');
   if(!dock || !('IntersectionObserver' in window)) return;
   var seen={cta:true,contact:false};

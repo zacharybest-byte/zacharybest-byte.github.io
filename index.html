@@ -377,6 +377,23 @@ a{color:inherit;text-decoration:none}
 .guestline a{display:inline-flex;align-items:center;min-height:44px;font-family:var(--serif);font-size:18px;color:var(--paper-text);transition:color .2s}
 .guestline a:hover{color:var(--pod-accent)}
 @media (min-width:1000px){.pod-head{grid-template-columns:56px minmax(0,1fr) auto !important}}
+
+/* ---------- expert-review polish ---------- */
+.news .band-head h2.label{display:block}
+.stories>li:last-child .story{border-bottom:0}
+.lead h3{font-size:clamp(24px,6.4vw,36px)}
+.pod{--pod-bg:var(--ink-2);--pod-line:var(--line-2);--pod-edge:var(--edge);--pod-text:var(--muted);--pod-muted:var(--dim);background:var(--ink-2);border-block:1px solid var(--line-2)}
+.tl{margin-top:12px}
+.stats div+div{border-left:1px solid var(--line-2);padding-left:12px}
+.stats dd{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;line-height:1.4}
+@media (min-width:760px){
+  .hero-photo{-webkit-mask-image:radial-gradient(ellipse 60% 64% at 50% 42%,#000 48%,transparent 100%);mask-image:radial-gradient(ellipse 60% 64% at 50% 42%,#000 48%,transparent 100%)}
+  .stats{gap:0 !important}
+  .stats div{padding-right:clamp(28px,4vw,56px)}
+  .stats div+div{padding-left:clamp(28px,4vw,56px)}
+  .stats dt{font-size:clamp(40px,4vw,52px)}
+  .stats dd{font-size:11px;letter-spacing:.12em}
+}
 @media print{
   :root{--ink:#fff;--ivory:#111;--paper-text:#111;--muted:#444;--dim:#555;--line:#ccc;--line-2:#999;--accent:#111;--news-bg:#fff;--pod-bg:#fff;--pod-card:#fff;--pod-text:#333;--pod-muted:#555;--pod-accent:#111;--film-bg:#fff;--film-accent:#111}
   body{background:#fff;color:#111}
@@ -416,12 +433,12 @@ a{color:inherit;text-decoration:none}
       <a class="site label" href="/">zacharybest.com</a>
       <nav aria-label="Primary">
         <ul>
-          <li><a href="#news">News</a></li>
-          <li><a href="#podcast">Podcast</a></li>
-          <li class="wide"><a href="#board">Board</a></li>
+          <li><a href="#news">Press</a></li>
+          <li class="wide"><a href="#podcast">Podcast</a></li>
+          <li><a href="#board">Board</a></li>
           <li class="soc"><a href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me" aria-label="Zach Best on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg></a></li>
           <li class="soc"><a href="https://x.com/zacharybest" target="_blank" rel="noopener me" aria-label="Zach Best on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a></li>
-          <li class="wide"><a class="btn btn-sm" href="#contact">Get in touch</a></li>
+          <li class="wide"><a class="btn btn-sm" href="#contact">Start a conversation</a></li>
         </ul>
       </nav>
     </header>
@@ -467,10 +484,8 @@ a{color:inherit;text-decoration:none}
         <li><a class="story" href="https://thecorporatecouch.podbean.com/e/from-kc-chiefs-fan-to-media-mogul-zach-best-on-culture-creativity-and-championship-mindsets/" target="_blank" rel="noopener"><span class="meta">The Corporate Couch · 2025</span><span class="h">From KC Chiefs fan to media mogul</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="story" href="https://www.specialolympics.org/stories/news/fansided-ceo-zach-best-details-his-experience-at-usa-games-shares-the-importance-of-inclusion" target="_blank" rel="noopener"><span class="meta">Special Olympics</span><span class="h">On the USA Games and the importance of inclusion</span><span class="sr-only"> (opens in a new tab)</span></a></li>
         <li><a class="story" href="https://www.specialolympics.org/stories/impact/fansided-guest-stars-on-inclusion-revolution-radio" target="_blank" rel="noopener"><span class="meta">Inclusion Revolution Radio</span><span class="h">Guest on the Special Olympics podcast</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-        <li><details class="more"><summary>More press <span aria-hidden="true">+</span></summary><ul>
-          <li><a class="story" href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener"><span class="meta">Hashtag Sports · 2022</span><span class="h">What businesses can learn from the inclusion revolution in sports</span><span class="sr-only"> (opens in a new tab)</span></a></li>
+                  <li><a class="story" href="https://www.hashtagsports.com/read/sports-inclusion-fansided-zachary-best" target="_blank" rel="noopener"><span class="meta">Hashtag Sports · 2022</span><span class="h">What businesses can learn from the inclusion revolution in sports</span><span class="sr-only"> (opens in a new tab)</span></a></li>
           <li><a class="story" href="https://www.417mag.com/issues/october-2015/nine-questions-with-zach-and-adam-best/" target="_blank" rel="noopener"><span class="meta">417 Magazine · 2015</span><span class="h">Nine questions with Zach and Adam Best</span><span class="sr-only"> (opens in a new tab)</span></a></li>
-        </ul></details></li>
       </ul>
     </div>
   </div>
@@ -522,13 +537,6 @@ a{color:inherit;text-decoration:none}
 
 <section id="record" class="sec" aria-labelledby="record-h">
   <h2 id="record-h" class="label" style="margin:0;font:600 11px/1.4 var(--sans);letter-spacing:.14em;color:var(--muted)">Track record</h2>
-  <ul class="worked" aria-label="Where I've worked">
-    <li><img class="si" src="logo-si.png" width="250" height="64" alt="Sports Illustrated" loading="lazy"></li>
-    <li><img class="fs" src="logo-fansided.png" width="296" height="64" alt="FanSided" loading="lazy"></li>
-    <li><img class="mm" src="logo-minute.png" width="284" height="64" alt="Minute Media" loading="lazy"></li>
-    <li><img class="ti" src="logo-timeinc.png" width="315" height="64" alt="Time Inc." loading="lazy"></li>
-    <li><img class="me" src="logo-meredith.png" width="276" height="64" alt="Meredith" loading="lazy"></li>
-  </ul>
   <ol class="tl">
     <li class="now"><span class="when">Now</span><span class="dot" aria-hidden="true"></span><span class="what">EVP, Communities, Sports Illustrated and FanSided</span></li>
     <li><span class="when">2020</span><span class="dot" aria-hidden="true"></span><span class="what">General Manager, Minute Media</span></li>
@@ -546,7 +554,7 @@ a{color:inherit;text-decoration:none}
     <p class="q">“The strongest businesses are built around people first.”</p>
     <h2 id="contact-h">Let’s talk.</h2>
     <div class="acts">
-      <a class="btn btn-solid" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg>Message me on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="btn btn-solid" href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg>Start a conversation<span class="sr-only"> on LinkedIn</span><span class="sr-only"> (opens in a new tab)</span></a>
     </div>
   </div>
   <footer class="wrap">

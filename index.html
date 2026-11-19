@@ -360,6 +360,23 @@ a{color:inherit;text-decoration:none}
 @media (min-width:1200px){
   .guests{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 }
+
+/* ---------- press: dark and sharp; podcast: compact ---------- */
+.news{--news-bg:var(--ink);--news-ink:var(--paper-text);--news-meta:var(--dim);--news-rule:var(--line);border-top:1px solid var(--line-2)}
+.news .band-head{border:0;padding:0}
+.news h2.label{font:600 11px/1.4 var(--sans);letter-spacing:.14em;color:var(--muted);margin:0}
+.news-grid{margin-top:14px !important}
+.lead h3{font-size:clamp(26px,7vw,44px)}
+.lead:hover h3,.story:hover .h{color:var(--accent)}
+.pod{padding-block:28px !important}
+.pod-head{grid-template-columns:56px minmax(0,1fr) !important;gap:10px 16px !important}
+.pod-art{width:56px !important;height:56px !important;grid-row:auto !important}
+.pod h2{font-size:clamp(24px,6.4vw,34px) !important}
+.guestline{display:flex;flex-wrap:wrap;align-items:center;gap:0 22px;margin-top:16px;padding-top:6px;border-top:1px solid var(--pod-line)}
+.guestline .label{color:var(--pod-muted)}
+.guestline a{display:inline-flex;align-items:center;min-height:44px;font-family:var(--serif);font-size:18px;color:var(--paper-text);transition:color .2s}
+.guestline a:hover{color:var(--pod-accent)}
+@media (min-width:1000px){.pod-head{grid-template-columns:56px minmax(0,1fr) auto !important}}
 @media print{
   :root{--ink:#fff;--ivory:#111;--paper-text:#111;--muted:#444;--dim:#555;--line:#ccc;--line-2:#999;--accent:#111;--news-bg:#fff;--pod-bg:#fff;--pod-card:#fff;--pod-text:#333;--pod-muted:#555;--pod-accent:#111;--film-bg:#fff;--film-accent:#111}
   body{background:#fff;color:#111}
@@ -438,7 +455,7 @@ a{color:inherit;text-decoration:none}
 <section id="news" class="news" aria-labelledby="news-h">
   <div class="wrap">
     <div class="band-head">
-      <h2 id="news-h">In the news</h2>
+      <h2 id="news-h" class="label">Press</h2>
     </div>
     <div class="news-grid">
       <a class="lead" href="https://www.sportsbusinessjournal.com/Articles/2026/11/16/fansided-launches-redesigned-app-with-emphasis-on-personalized-feeds-in-depth-coverage/" target="_blank" rel="noopener">
@@ -477,20 +494,12 @@ a{color:inherit;text-decoration:none}
         <a class="btn" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
-    <h3 class="guests-head label">Recent guests</h3>
-    <ul class="guests">
-      <li><a class="guest" href="https://redcircle.com/shows/7f8bc817-0a1a-4992-8fe7-951a12bbefea/episodes/9937f74e-5a11-4521-8de2-f1b9ad5be853" target="_blank" rel="noopener">
-        <span><span class="n">Bijan Robinson</span><span class="r">Atlanta Falcons running back, All-Pro</span></span>
-        <span class="go">Ep. 7 · Listen ↗</span></a></li>
-      <li><a class="guest" href="https://podcasts.apple.com/us/podcast/4-drew-brees/id1886473656?i=1000777816941" target="_blank" rel="noopener">
-        <span><span class="n">Drew Brees</span><span class="r">Former NFL quarterback</span></span>
-        <span class="go">Ep. 4 · Listen ↗</span></a></li>
-      <li><a class="guest" href="https://podcasts.apple.com/us/podcast/1-welcome-to-the-whats-your-y-podcast-wyatt-spalding/id1886473656?i=1000756160088" target="_blank" rel="noopener">
-        <span><span class="n">Wyatt Spalding</span><span class="r">My co-host, on his own story</span></span>
-        <span class="go">Ep. 1 · Listen ↗</span></a></li>
-      <li><a class="guest" href="https://podcasts.apple.com/us/podcast/2-rj-nealon/id1886473656?i=1000761164597" target="_blank" rel="noopener">
-        <span><span class="n">RJ Nealon</span><span class="r">Adaptive athlete and jiu-jitsu competitor</span></span>
-        <span class="go">Ep. 2 · Listen ↗</span></a></li>
+    <ul class="guestline">
+      <li class="label">Guests</li>
+      <li><a href="https://redcircle.com/shows/7f8bc817-0a1a-4992-8fe7-951a12bbefea/episodes/9937f74e-5a11-4521-8de2-f1b9ad5be853" target="_blank" rel="noopener">Bijan Robinson<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="https://podcasts.apple.com/us/podcast/4-drew-brees/id1886473656?i=1000777816941" target="_blank" rel="noopener">Drew Brees<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="https://podcasts.apple.com/us/podcast/2-rj-nealon/id1886473656?i=1000761164597" target="_blank" rel="noopener">RJ Nealon<span class="sr-only"> (opens in a new tab)</span></a></li>
+      <li><a href="https://podcasts.apple.com/us/podcast/1-welcome-to-the-whats-your-y-podcast-wyatt-spalding/id1886473656?i=1000756160088" target="_blank" rel="noopener">Wyatt Spalding<span class="sr-only"> (opens in a new tab)</span></a></li>
     </ul>
   </div>
 </section>

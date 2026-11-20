@@ -396,7 +396,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* ---------- press grid; podcast last ---------- */
-.press{padding-top:var(--band);border-top:1px solid var(--line-2)}
+.press{padding-top:var(--band)}
 .pgrid{margin-top:14px;border-top:1px solid var(--line-2)}
 .pgrid li{border-bottom:1px solid var(--line)}
 .pgrid a{display:flex;flex-direction:column;gap:6px;height:100%;padding:16px 0}
@@ -405,8 +405,6 @@ a{color:inherit;text-decoration:none}
 .pgrid .h{font-family:var(--serif);font-size:19px;line-height:1.22;color:var(--paper-text);text-wrap:pretty;transition:color .2s}
 .pgrid .y{margin-top:auto;font-size:12.5px;color:var(--dim)}
 .pgrid a:hover{color:inherit}.pgrid a:hover .h{color:var(--accent)}
-.pod{margin-top:var(--gap);border-bottom:0}
-.contact{margin-top:0}
 @media (min-width:760px){
   .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(28px,4vw,56px)}
   .pgrid a{padding:22px 0;gap:8px}
@@ -451,9 +449,9 @@ a{color:inherit;text-decoration:none}
       <a class="site label" href="/">zacharybest.com</a>
       <nav aria-label="Primary">
         <ul>
+          <li class="wide"><a href="#podcast">Podcast</a></li>
           <li><a href="#news">Press</a></li>
           <li><a href="#board">Board</a></li>
-          <li class="wide"><a href="#podcast">Podcast</a></li>
           <li class="soc"><a href="https://www.linkedin.com/in/zacharybest" target="_blank" rel="noopener me" aria-label="Zach Best on LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-li"/></svg></a></li>
           <li class="soc"><a href="https://x.com/zacharybest" target="_blank" rel="noopener me" aria-label="Zach Best on X"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></a></li>
           <li class="wide"><a class="btn btn-sm" href="#contact">Start a conversation</a></li>
@@ -478,12 +476,26 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
   </div>
+</section>
+
+<section id="podcast" class="pod" aria-labelledby="pod-h">
   <div class="wrap">
-    <dl class="stats" aria-label="At a glance">
-      <div><dt data-since="2007">19</dt><dd>years leading FanSided</dd></div>
-      <div><dt>500</dt><dd>communities</dd></div>
-      <div><dt>75M+</dt><dd>monthly audience</dd></div>
-    </dl>
+    <div class="pod-head">
+      <picture>
+        <source type="image/webp" srcset="podcast-200.webp 200w, podcast.webp 520w" sizes="(max-width: 759px) 72px, 112px">
+        <img class="pod-art" src="podcast.jpg" srcset="podcast-200.jpg 200w, podcast.jpg 520w" sizes="(max-width: 759px) 72px, 112px" width="520" height="520" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div>
+        <p class="kicker">Podcast · Co-host</p>
+        <h2 id="pod-h">What’s Your Y?</h2>
+      </div>
+      <p class="pod-desc">How sports help people find purpose. Co-hosted with Wyatt Spalding. Guests include Bijan Robinson and Drew Brees.</p>
+      <div class="listen">
+        <a class="btn btn-solid" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
+        <a class="btn" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple</a>
+        <a class="btn" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -530,26 +542,6 @@ a{color:inherit;text-decoration:none}
   </ol>
 </section>
 </div>
-<section id="podcast" class="pod" aria-labelledby="pod-h">
-  <div class="wrap">
-    <div class="pod-head">
-      <picture>
-        <source type="image/webp" srcset="podcast-200.webp 200w, podcast.webp 520w" sizes="(max-width: 759px) 72px, 112px">
-        <img class="pod-art" src="podcast.jpg" srcset="podcast-200.jpg 200w, podcast.jpg 520w" sizes="(max-width: 759px) 72px, 112px" width="520" height="520" alt="" loading="lazy" decoding="async">
-      </picture>
-      <div>
-        <p class="kicker">Podcast · Co-host</p>
-        <h2 id="pod-h">What’s Your Y?</h2>
-      </div>
-      <p class="pod-desc">How sports help people find purpose. Co-hosted with Wyatt Spalding. Guests include Bijan Robinson and Drew Brees.</p>
-      <div class="listen">
-        <a class="btn btn-solid" href="https://open.spotify.com/show/0mIGUzzsk8OOKGRZyQKfwe" target="_blank" rel="noopener">Spotify</a>
-        <a class="btn" href="https://podcasts.apple.com/us/podcast/whats-your-y/id1886473656" target="_blank" rel="noopener">Apple</a>
-        <a class="btn" href="https://www.youtube.com/watch?v=Pmi4_RA6-f0" target="_blank" rel="noopener">YouTube</a>
-      </div>
-    </div>
-  </div>
-</section>
 </main>
 
 <section id="contact" class="contact" aria-labelledby="contact-h">
